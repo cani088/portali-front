@@ -1,0 +1,157 @@
+#comments-container{
+    /* border:1px solid black; */
+    height:auto;
+    margin:0px auto;
+    font-family: verdana;
+    font-size:13px;
+    
+  }
+  :host ::ng-deep .main{
+    border-top:1px solid whitesmoke;
+    padding-top:10px;
+    padding-left:10px;
+    width:100%;
+    height:auto;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    margin-bottom:15px;
+    background-color: white;
+    box-shadow:-1px 1px 3px #d1cbcb;
+  }
+  :host ::ng-deep .child{
+    width:100%;
+    padding-left:10px;
+    padding-bottom:0px;
+    margin-bottom:0px;
+    /* border-left:3px solid; */
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    margin-top:1px;
+      
+  }
+  .main:hover,.child:hover{
+    /*border-left:1px solid green;*/
+  }
+  
+  :host ::ng-deep .parent-0{
+    padding:10px !important;
+  }
+  
+  :host ::ng-deep .like_btn{
+    margin-left:5px;
+    margin-right:5px;
+  
+  }
+  :host ::ng-deep .buttons_below{
+    /* border-bottom:1px solid #d4d4d4; */
+    background-color: whitesmoke;
+    margin-left:-10px;
+  }
+  :host ::ng-deep .collapse_btn, .expand_btn{
+      margin-left:5px;
+  }
+  
+  :host ::ng-deep .expand_btn{
+      display:none;
+  }
+  :host ::ng-deep a{
+    text-decoration: none;
+    font-size:14px;
+    color:black;
+  }
+  :host ::ng-deep body{
+    font-family: helvetica; 
+  }
+  :host ::ng-deep .profile-picture{
+    float:left;
+    height:100px;
+    width:100px;
+    display: flex;
+    overflow:hidden;
+  }
+  
+  :host ::ng-deep .user_name{
+    vertical-align: top;
+    padding-bottom:10px;
+    font-family: verdana;
+    font-size:12px;
+  }
+  :host ::ng-deep .comment_body{
+    /* margin-left:35px; */
+    display: block;
+    margin-top:9px;
+    padding-bottom: 10px;
+  }
+  
+  :host ::ng-deep button{
+    background-color:whitesmoke;
+    color:#4286f4;
+    border:0px;
+    cursor: pointer;
+    font-family: verdana;
+    font-size:9px;
+    font-weight: 800;
+    padding-bottom: 3px;
+  }
+  
+  :host ::ng-deep .buttons_container{
+    width:500px;
+    font-size: 10px;
+  }
+  
+  :host ::ng-deep .comment-content{
+    padding:0px;
+  }
+  
+  
+  :host ::ng-deep .likes_value{
+    font-family: verdana;
+    font-size:10px;
+    color:#ffb380;
+    margin-left:10px;
+    font-weight: 700;
+  
+  }
+  
+  :host ::ng-deep .comment_time{
+    font-family: verdana;
+    font-size:10px;
+    color:darkgray;
+    font-weight: 700;
+    margin-left:10px;
+  }
+  
+  :host ::ng-deep .comments_value{
+    font-family: verdana;
+    font-size:10px;
+    color:#ffb380;
+    margin-left:15px;
+    font-weight: 700;
+  }
+  
+  :host ::ng-deep #form{
+    margin-bottom: 30px;
+  }
+  
+  :host ::ng-deep .submit-btn{
+    width:80px;
+    height:30px;
+    background-color:white;
+    float: right;
+    margin-right: 123px;
+  }
+  
+  :host ::ng-deep .reply_textarea{
+    display: none;
+  }
+  
+  :host ::ng-deep .reply_button{
+    width:50px;
+    background-color:white;
+    color:black;
+    height:20px;
+  }
+  
+  
