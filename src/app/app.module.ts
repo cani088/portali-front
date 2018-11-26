@@ -6,17 +6,19 @@ import { AppComponent } from './app.component';
 import { ArticleComponent } from './article/article.component';
 import { TopMenuComponent } from './top-menu/top-menu.component';
 import { CommentsComponent } from './comments/comments.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticleComponent,
     TopMenuComponent,
-    CommentsComponent
+    CommentsComponent 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,22 +1,22 @@
 <div class="content-container col-md-8 col-sm-12">
   <div class="article_content">
-      <h3 style='padding:10px;'>
-          Mbledhja e qeverive Kosovë-Shqipëri, do të diskutohet për bashkëpunimin ndërkufitar
-      </h3>
-      <img src="https://telegrafi.com/wp-content/uploads/2018/08/Ditmir-Bushati-foto-ridvan-slivova-01-780x439.jpg" alt="" width="100%" height="auto">
+    <h3 style='padding:10px;'>
+        {{articleData.title}}
+    </h3>
+    <div *ngIf='hasImage' class="article_image">
+        <img src="{{articleData.article_image}}" alt="" width="100%" height="auto">
+    </div>
       <div class="article_body">
-          <p>Në kuadër të programit të bashkëpunimit ndërkufitar Shqipëri- Kosovë, financuar nga Bashkimi Evropian, ministri për Evropën dhe Punët e Jashtme i Shqipërisë, Ditmir Bushati deklaroi se së shpejti do të zhvillohet takimi i radhës mes dy qeverive.</p>
-          <p>“Në pak javë në do të kemi takimin e radhës mes qeverisë së Kosovës dhe Shqipërisë, që do të mbahet në Pejë, ku temë e diskutimit do të jetë edhe nevoja për lehtësimin e mëtejshëm për sa i përket bashkëpunimit ndërkufitar, për të krijuar më shumë lehtësi në këtë drejtim”, u shpreh Bushati, raporton ATA.</p>
-          <p>Në përgjigje të zërave në Ballkan, të cilat ministri i cilësoi nacionaliste, ai tha se “ndërkohë që në Ballkan vijon të flitet për teza nacionaliste, ne shqiptarët është mirë që të fokusohemi në çështje sa më konkrete, të cilat ndikojnë jetën e qytetarëve”.</p>
-          <p>Sipas ministrit, përmes programeve të bashkëpunimit ndërkufitar, falë ndihmës së BE-së, krijohet një mundësi dhe ndërlidhje jo thjesht mes dy zonave të ndryshme të Shqipërisë dhe Kosovës, por mbi të gjitha mes popullatave që jetojnë në këto zona e krahina, të cilat në rastin e Shqipërisë dhe Kosovës, ka një specifikë të veçantë, sepse, sipas tij, në fund të ditës jemi një komb dhe flasim një gjuhë.</p>
-          <p>Tri programet e financuara nga BE-ja janë: pika doganore Shishtavec-Krushevë, mbrojtja mjedisore dhe menaxhimi i mbetjeve, si dhe programi i shtrirjes së vijës Dinarika, që ka të bëjë me rajonin ndërkufitar Shqipëri-Kosovë.</p>
+        <div class="article_text mt-5" [innerHtml]="articleData.body"></div>
         
-          <div class="tags">
-              <span><b> Shiko me shume lajme rreth: </b></span><br>
-              <a href="index.html?tag=Dimitri Bushati"> <div class="tag">Ditmir Bushati</div></a>
-              <a href="index.html?tag=Kosovë"> <div class="tag">Kosovë</div></a>
-              <a href="index.html?tag=Shqipëri"> <div class="tag">Shqipëri</div></a>
-          </div>                                       
+        <!-- If the article has tags display the tags div -->
+        <div *ngIf='hasTags' class="tags">
+            <span ><b> Shiko me shume lajme rreth: </b></span><br>
+            <a *ngFor="let tag of articleData.tags" href="index.html?tag={{tag.tag_body}}">
+                <div class="tag">{{tag.tag_body}}</div>
+            </a>
+        </div>
+        <!-- End the tags div -->
       </div>
   </div>
   
