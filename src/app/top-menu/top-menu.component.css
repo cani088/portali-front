@@ -7,7 +7,8 @@
 }
 
 .navbar_besi{
-    background-color:lightblue;
+    background-color:#9900ff;
+    color:white !important; 
 }
 
 .nav-item-besi{
@@ -31,5 +32,26 @@
     
 }
 .nav-item:hover{
-    background-color:lightblue;
+    opacity: 0.9;
+}
+
+
+
+.navbar-links{
+    display:flex;
+}
+.nav-link{
+    text-decoration: none;
+    color:white;
+}
+
+.nav-link:hover{
+    background-color:white;
+    color:#9900ff;
+    text-decoration: none;
+}
+
+.user_profile_top{
+    /* float: right; */
+    display: inline-block;
 }

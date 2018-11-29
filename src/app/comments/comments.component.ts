@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleService } from '../services/article.service';
-
+import { CommentsService } from '../services/comments.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 
@@ -112,24 +112,27 @@ export class CommentsComponent implements OnInit {
   //   }
   // ];
   
-  public comments:any;
-  constructor(private articleService:ArticleService) { 
 
+  public comments:any;
+  public commentsLoaded=false;
+  //article id for comments
+  public id;
+  constructor(private commentsService:CommentsService, private route:ActivatedRoute) {
+    console.log('Comments component loaded');
+    
+    this.id=route.snapshot.params['id'];
   }
   ngOnInit(){
-    this.articleService.getArticleData()
-    .subscribe((data)=>{
-      this.comments=data[0].comments;
-      console.log('comments',this.comments);
-    });
+    
   }
 
   ngAfterViewInit(){
-    alert('asdas');
-    this.loadComments();
+    this.commentsService.getCommentsData(this.id)
+    .subscribe((data)=>{
+      this.comments=data;
+      this.loadComments();
+    });
   }
-
- 
 
   loadComments(){
     this.comments.forEach(($e)=>{
@@ -150,10 +153,9 @@ export class CommentsComponent implements OnInit {
     comment_content+="<div class='buttons_below'>"+this.appendButtons(e)+"</div>";
     
     finalString+='<div class="'+type+' parent-'+e.parent+'"  style="border-left:1px solid #e0e0e0" id="c-'+e.comment_id+'">';
-    finalString+='<span class="user_name">'+e.user+'</span>';
+    finalString+='<span class="user_name">'+e.user_name+'</span>';
     finalString+='<span class="comment_time">'+e.human_readable+'</span>';
-    finalString+='<span class="likes_value">'+e.likes+' Likes</span>';
-    finalString+='<span class="comments_value">'+e.comments+' Replies</span>';
+    finalString+='<span class="likes_value">20 Likes</span>';
     finalString+=comment_content;
     finalString+='</div>';
     return finalString;
@@ -162,8 +164,11 @@ export class CommentsComponent implements OnInit {
   appendButtons(e){
     var finalString='';
     finalString='<div id="buttons_'+e.comment_id+'" class="buttons_container">';
-        finalString+="<button href='#' class='like_btn' onClick='likeComment("+e.comment_id+")'>Like</button>"; 
-        finalString+="<button href='#' class='like_btn' onClick='unLikeComment("+e.comment_id+")'>Un-Like </button>"; 
+        if(e.is_like==1){
+          finalString+="<button href='#' class='like_btn' onClick='unLikeComment("+e.comment_id+")'>Un-Like </button>"; 
+        }else{
+          finalString+="<button href='#' class='like_btn' onClick='likeComment("+e.comment_id+")'>Like</button>"; 
+        }
         finalString+="<button href='#' class='comment_btn' onClick='showTextArea("+e.comment_id+")'>Reply</button>";
         finalString+="<button id='collapse_btn_"+e.comment_id+"' class='collapse_btn' onClick='collapseComment("+e.comment_id+")'>Collapse <img src='/assets/images/up-arrow.svg' width='10px' height='10px'/></button>";
         finalString+="<button id='expand_btn_"+e.comment_id+"' class='expand_btn' onClick='expandComment("+e.comment_id+")'>Expand <img src='/assets/images/down-arrow.svg' width='10px' height='10px'/></button>";
@@ -178,4 +183,16 @@ export class CommentsComponent implements OnInit {
     finalString+="</div>";
     return finalString;
   }
+
+  submitComment(){
+    
+    console.log('bes');
+
+
+  }
+
+  besnik(){
+    console.log('bes');
+  }
+
 }

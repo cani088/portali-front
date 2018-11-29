@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleService } from '../services/article.service';
+import { ActivatedRoute } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-article',
@@ -17,10 +20,15 @@ export class ArticleComponent implements OnInit {
   //variable to check if the article has an Image
   public hasImage=false;
 
-  constructor(private articleService:ArticleService) { }
+  //the id of the article
+  public id;
+
+  constructor(private articleService:ArticleService,private route:ActivatedRoute) {
+    this.id=route.snapshot.params['id'];
+  }
 
   ngOnInit() {
-    this.articleService.getArticleData()
+    this.articleService.getArticleData(this.id)
       .subscribe((data)=>{
         this.articleData=data[0];
              

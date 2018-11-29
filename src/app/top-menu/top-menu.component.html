@@ -1,4 +1,4 @@
-<nav class="col-12 navbar sticky-top navbar-expand-lg navbar-light navbar_besi">
+<!-- <nav class="col-12 navbar sticky-top navbar-expand-lg navbar-light navbar_besi">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
   </button>
@@ -18,4 +18,29 @@
           </li>
       </ul>
   </div>
-</nav>
+  <div class="user_profile-top">
+    <div *ngIf="isLoggedIn" class="user_data">
+        <span>Besnik Cani</span>
+    </div>
+    <div *ngIf="!isLoggedIn">
+        <a routerLink="/login" routerActive='active'>Login</a>
+    </div>
+  </div>
+</nav> -->
+<div class="row">
+    <div class='col-12 sticky-top navbar_besi'>
+        <ul class='navbar-links col-10'>
+            <a href=""><li class='nav-link'>Top Lajmet</li></a> 
+            <a href=""><li class='nav-link'>Me te rejat</li></a> 
+            <a href=""><li class='nav-link'>Interesante</li></a> 
+        </ul>
+        <div class="user_profile_top col-2">
+            <div *ngIf="isLoggedIn" class="user_data">
+                <span>Besnik Cani</span>
+            </div>
+            <div *ngIf="!isLoggedIn">
+                <a routerLink="/login" routerActive='active'>Login</a>
+            </div>
+        </div>
+    </div>
+</div>

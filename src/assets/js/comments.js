@@ -1,7 +1,12 @@
  
 function showTextArea(comment_id){
-    document.getElementsByClassName('reply_textarea').style.display='none';
-    document.getElementById('reply_textarea'+comment_id).style.display='block';
+    $textareas=document.getElementsByClassName('reply_textarea');
+    
+    for(i=0;i<$textareas.length;i++){
+        $textareas[i].style.display='none';
+    }
+   
+    document.getElementById('textarea-'+comment_id).style.display='block';
 }
   
 function cancelReply(comment_id){
