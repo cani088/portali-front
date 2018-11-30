@@ -9,49 +9,21 @@
 .navbar_besi{
     background-color:#9900ff;
     color:white !important; 
-}
-
-.nav-item-besi{
-    height: 50px;
-    padding-top:-70px !important;
-}
-.nav-item-besi:hover{
-    background-color:white;
-}
-
-.nav-ul{
-    display:flex;
+    height:48px;
 }
 
 .nav-item{
-    padding-right: 20px;
-    padding-top:12px;
-    padding-bottom:12px;
-    padding:12px 20px 12px 20px;
-    list-style-type:none;
-    
+    color:white !important;
+    height:48px;
+    width:120px;
+    text-align: center;
 }
 .nav-item:hover{
-    opacity: 0.9;
+    color:white !important;
+    background-color:#c266ff !important;
 }
 
-
-
-.navbar-links{
-    display:flex;
-}
-.nav-link{
-    text-decoration: none;
-    color:white;
+.special{
+    background-color:green;
 }
 
-.nav-link:hover{
-    background-color:white;
-    color:#9900ff;
-    text-decoration: none;
-}
-
-.user_profile_top{
-    /* float: right; */
-    display: inline-block;
-}

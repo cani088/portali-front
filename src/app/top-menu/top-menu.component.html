@@ -1,62 +1,24 @@
-<!-- <nav class="col-12 navbar sticky-top navbar-expand-lg navbar-light navbar_besi">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-          <li class="nav-item active nav-item-besi">
-              <a class="nav-link" href="#">Top Lajmet<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item nav-item-besi">
-              <a class="nav-link" href="#">Te rejat<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item nav-item-besi">
-              <a class="nav-link" href="#">Sport<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item nav-item-besi">
-              <a class="nav-link" href="#">Interesante<span class="sr-only">(current)</span></a>
-          </li>
-      </ul>
-  </div>
-  <div class="user_profile-top">
-    <div *ngIf="isLoggedIn" class="user_data">
-        <span>Besnik Cani</span>
-    </div>
-    <div *ngIf="!isLoggedIn">
-        <a routerLink="/login" routerActive='active'>Login</a>
-    </div>
-  </div>
-</nav> -->
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Brand</a>
-        <form class="navbar-form navbar-right">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-        </form>
+
+<nav class="navbar navbar-expand-lg navbar-light navbar_besi mb-10">
+    <a class="navbar-brand" href="#">Gazeta </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+        <a class="nav-item nav-link active" routerLink="/top">Top Lajmet <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" routerLink="/new">Me te rejat</a>
+        <a class="nav-item nav-link" routerLink="/sport">Sport</a>
+        <a class="nav-item nav-link" routerLink="/interesante">Interesante</a>
+        <a *ngIf='ama' class="nav-item nav-link special" routerLink="/ama">AMA</a>
         </div>
-    
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            
-        <ul class="nav navbar-nav navbar-right">
-            <!-- <li><a href="#" class='navbar-brand'>Login <span class="sr-only">(current)</span></a></li> -->
-            <li><a href="#" class='navbar-brand'>Besnik Cani <span class="sr-only">(current)</span></a></li>
-            <li><a href="#" class='navbar-brand'> <img src="bell.svg" alt="" width="25px" height="auto"> <span class="sr-only">(current)</span></a></li>
-
-            
-        </ul>
-
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+    </div>
+    <div class="user_profile-top">
+        <div *ngIf="isLoggedIn" class="user_data">
+            <span>Besnik Cani</span>
+        </div>
+        <div *ngIf="!isLoggedIn">
+            <a routerLink="/login" routerActive='active' class='nav-item nav-link'>Kyquni</a>
+        </div>
+    </div>
 </nav>

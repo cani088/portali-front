@@ -10,107 +10,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./comments.component.css']
 })
 export class CommentsComponent implements OnInit {
-  // public comments=[
-  //   {
-  //     "comment_id":20,
-  //     "comment_body":"First main comment",
-  //     "parent":0,
-  //     "depth":0,
-  //     "user":"User 1",
-  //     "likes":30,
-  //     "comments":8
-  //   },
-  //   {
-  //     "comment_id":21,
-  //     "comment_body":"I think its hilarious u kids talking shit about semphis. U wouldnt say this shit to him at LAN, hes jacked. Not only that but he wears the freshest clothes, eats at the chillest restaurants anddddddd hangs out with the hottest dudes. Yall are pathetic lol",
-  //     "parent":20,
-  //     "depth":1,
-  //     "user":"User 2",
-  //     "likes":30,
-  //     "comments":8
-  //   },
-  //   {
-  //     "comment_id":22,
-  //     "comment_body":"reply to comment number",
-  //     "parent":21,
-  //     "depth":2,
-  //     "user":"User 1",
-  //     "likes":30,
-  //     "comments":8
-  //   },
-  //   {
-  //     "comment_id":23,
-  //     "comment_body":"Another reply to comment number",
-  //     "parent":21,
-  //     "depth":2,
-  //     "user":"User 4",
-  //     "likes":30,
-  //     "comments":8
-  //   },
-  //   {
-  //     "comment_id":24,
-  //     "comment_body":"Reply to some comment",
-  //     "parent":22,
-  //     "depth":3,
-  //     "user":"User 5",
-  //     "likes":30,
-  //     "comments":8
-  //   },
-  //   {
-  //     "comment_id":25,
-  //     "comment_body":"Second main comment",
-  //     "parent":0,
-  //     "depth":0,
-  //     "user":"User 1",
-  //     "likes":30,
-  //     "comments":8
-  //   },
-  //   {
-  //     "comment_id":26,
-  //     "comment_body":"Reply to Second main comment",
-  //     "parent":25,
-  //     "depth":1,
-  //     "user":"User 8",
-  //     "likes":30,
-  //     "comments":8
-  //   },
-  //   {
-  //     "comment_id":27,
-  //     "comment_body":"Reply to Second main comment",
-  //     "parent":25,
-  //     "depth":1,
-  //     "user":"User 8",
-  //     "likes":30,
-  //     "comments":8
-  //   },
-  //   {
-  //     "comment_id":28,
-  //     "comment_body":"Third main comment",
-  //     "parent":0,
-  //     "depth":0,
-  //     "user":"User 1",
-  //     "likes":30,
-  //     "comments":8
-  //   },
-  //   {
-  //     "comment_id":29,
-  //     "comment_body":"Reply to some comment",
-  //     "parent":24,
-  //     "depth":4,
-  //     "user":"User 6",
-  //     "likes":30,
-  //     "comments":8
-  //   },
-  //   {
-  //     "comment_id":30,
-  //     "comment_body":"Reply to some comment",
-  //     "parent":29,
-  //     "depth":5,
-  //     "user":"User 7",
-  //     "likes":30,
-  //     "comments":8
-  //   }
-  // ];
   
 
   public comments:any;
@@ -155,7 +54,7 @@ export class CommentsComponent implements OnInit {
     finalString+='<div class="'+type+' parent-'+e.parent+'"  style="border-left:1px solid #e0e0e0" id="c-'+e.comment_id+'">';
     finalString+='<span class="user_name">'+e.user_name+'</span>';
     finalString+='<span class="comment_time">'+e.human_readable+'</span>';
-    finalString+='<span class="likes_value">20 Likes</span>';
+    finalString+='<span class="likes_value">'+e.total_likes+' Likes</span>';
     finalString+=comment_content;
     finalString+='</div>';
     return finalString;

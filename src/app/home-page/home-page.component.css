@@ -1,0 +1,66 @@
+
+.article_time{
+    color:#656565;
+    margin-left:0px;
+}
+
+
+.article_info{
+    font-size:10px;
+    color:#ffb380;
+    font-weight: 600;
+    display: inline-block;
+    margin-left:14px;
+    
+}
+
+.article_title{
+    display: inline-block;
+    text-decoration:none;
+    padding:0px;
+    margin-bottom:10px;
+}
+
+
+.link_to_article{
+    text-decoration:none;
+    color:#4286f4;
+    font-size: 16px;
+
+}
+
+.article_summary_text{
+    margin:0px;
+    font-weight: 200;
+    font-size: 16px;
+
+}
+
+.article_image{
+    display: inline-block;
+    margin-right: 20px;
+    width:150px;
+    height:150px;
+    overflow:hidden;
+}
+
+
+.article{
+    display: flex;
+    font-size:13px;
+    margin:0px auto;
+    border-bottom:1px solid whitesmoke;
+    padding:5px;
+}
+
+.article_info_bottom{
+    font-size:10px;
+    font-weight: 600;
+    float:right;
+}
+
+.blue_text{
+    color:#4286f4;
+    font-size: 12px;
+    font-weight: 600;
+}

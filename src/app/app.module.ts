@@ -9,6 +9,7 @@ import { CommentsComponent } from './comments/comments.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RouterModule } from '@angular/router';
     ArticleComponent,
     TopMenuComponent,
     CommentsComponent,
-    LoginComponent
+    LoginComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +27,10 @@ import { RouterModule } from '@angular/router';
     RouterModule.forRoot([
       {path:'login',component:LoginComponent},
       {path:'article/:id',component:ArticleComponent},
+      {path:'sport',component:HomePageComponent},
+      {path:'new',component:HomePageComponent},
+      {path:'interesante',component:HomePageComponent},
+      {path:'top',component:HomePageComponent}
     ]),
   ],
   providers: [],
