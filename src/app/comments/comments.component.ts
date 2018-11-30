@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CommentsService } from '../services/comments.service';
+import { ArticleService } from '../services/article.service';
 import { ActivatedRoute } from '@angular/router';
-
-
 
 @Component({
   selector: 'app-comments',
@@ -10,13 +8,18 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./comments.component.css']
 })
 export class CommentsComponent implements OnInit {
-  
-
+  //variable to store the comments
   public comments:any;
-  public commentsLoaded=false;
+  
   //article id for comments
   public id;
-  constructor(private commentsService:CommentsService, private route:ActivatedRoute) {
+
+  //boolean to check if post has comments 
+  public hasComments=false;
+
+  //store total number of comments
+  public totalComments=0;
+  constructor(private articleService:ArticleService, private route:ActivatedRoute) {
     console.log('Comments component loaded');
     
     this.id=route.snapshot.params['id'];
@@ -26,10 +29,13 @@ export class CommentsComponent implements OnInit {
   }
 
   ngAfterViewInit(){
-    this.commentsService.getCommentsData(this.id)
+    this.articleService.getComments(this.id)
     .subscribe((data)=>{
       this.comments=data;
-      this.loadComments();
+      this.totalComments=this.comments.length;
+      if(this.totalComments>0){
+        this.loadComments();
+      }
     });
   }
 

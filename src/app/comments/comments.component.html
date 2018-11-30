@@ -7,6 +7,7 @@
           <input type="submit" (click)="submitComment()" value="Submit" class='btn btn-primary'/>
       </form>
   </div>
-  <h3>Diskutimet:</h3>
-  
+  <h3>Diskutimet ({{totalComments}}):</h3>
+  <span *ngIf='totalComments==0'>Nuk ka asnje koment</span>      
+
 </div>

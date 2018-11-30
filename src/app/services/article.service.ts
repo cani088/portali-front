@@ -6,13 +6,25 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ArticleService {
 
-  private _url='';
+  private _url='http://127.0.0.1:8000/api';
   constructor(private http:HttpClient) {
   } 
   
   getArticleData(id){
-    this._url='http://127.0.0.1:8000/api/article/'+id;
-    return this.http.get(this._url);
+    let url=this._url+"/article/"+id;
+    return this.http.get(url);
   }
+
+  getComments(id){
+    let url=this._url+"/article/"+id+"/comments";
+
+    return this.http.get(url);
+  }
+
+  getArticles(type){
+    let url=this._url+"/articles/"+type;
+    return this.http.get(url);
+  }
+
 }
    

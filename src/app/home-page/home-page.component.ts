@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HomePageService } from '../services/home-page.service';
+import { ArticleService } from '../services/article.service';
 
 
 @Component({
@@ -12,13 +12,12 @@ export class HomePageComponent implements OnInit {
   
   public pageType;
   public articles;
-  constructor(private route:ActivatedRoute,private homePageService:HomePageService) { 
+  constructor(private route:ActivatedRoute,private articleService:ArticleService) { 
     this.pageType=this.route.snapshot.url[0].path;
-
   }
 
   ngOnInit() {
-    this.homePageService.getArticles(this.pageType)
+    this.articleService.getArticles(this.pageType)
     .subscribe((data)=>{
       this.articles=data;
 

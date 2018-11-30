@@ -1,32 +1,40 @@
 
     <div class="mb-4"></div>
     <div *ngFor="let article of articles" class="article col-md-8 col-sm-12 mb-3">
-        <div class="left-content">
-            <div class="article_image ">
-                <a routerLink="/article/{{article.article_id}}">
-                  <img src="{{article.article_image}}" alt="" height="120px" width='auto'>
-                </a>
+        <div class='picture_article'>
+            <div class="left-content">
+                <div class="article_image ">
+                    <a routerLink="/article/{{article.article_id}}">
+                        <div *ngIf='article.article_image'>
+                            <img src="{{article.article_image}}" alt="" height="120px" width='auto'>
+                        </div>
+                        <div *ngIf='!article.article_image'>
+                            <img src="assets/images/default-picture.svg" alt="" height="120px" width='auto'>
+                        </div>
+                    </a>
+                </div>
+            </div>  
+            <div class="right-content">
+                <div class="article_title">
+                    <a routerLink="/article/{{article.article_id}}" class='link_to_article'> <span>{{article.title}}</span></a>
+                </div>
+                <div class="article_summary">
+                    <span>
+                        <h4 class='article_summary_text'  [innerHtml]="article.body">...
+                        <a routerLink="/article/{{article.article_id}}" class='blue_text'>Lexo me shume..</a>
+                        </h4>
+                    </span>
+                </div>
             </div>
-        </div>  
-     
-        <div class="right-content">
-            <div class="article_title">
-                <a routerLink="/article/{{article.article_id}}" class='link_to_article'> <span>{{article.title}}</span></a>
-            </div>
-            
-            <div class="article_summary">
-                <span>
-                  <h4 class='article_summary_text'  [innerHtml]="article.body">...
-                    <a routerLink="/article/{{article.article_id}}" class='blue_text'>Lexo me shume..</a>
-                  </h4>
-                </span>
-            </div>
+        </div>
+      
+        <div class="mt-2 bottom_bar">
             <div class="article_info">
                 <span class='likes_summary'> {{article.total_likes}} Likes</span>
                 <span class='comments_summary'> {{article.total_comments}} Comments</span>
             </div>
             <div class='article_info_bottom'>
-                <span class='article_time article_time'>{{article.created_at}}</span>
+                <span *ngIf="article.created_at_t>0" class='article_time article_time'>{{article.human_readable_time}}</span>
             </div>
         </div>
     </div>

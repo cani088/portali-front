@@ -1,16 +1,16 @@
 
 <nav class="navbar navbar-expand-lg navbar-light navbar_besi mb-10">
-    <a class="navbar-brand" href="#">Gazeta </a>
+    <img src="assets/images/default-picture.svg" alt="" height="50px" width='auto'>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-        <a class="nav-item nav-link active" routerLink="/top">Top Lajmet <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" routerLink="/new">Me te rejat</a>
-        <a class="nav-item nav-link" routerLink="/sport">Sport</a>
-        <a class="nav-item nav-link" routerLink="/interesante">Interesante</a>
-        <a *ngIf='ama' class="nav-item nav-link special" routerLink="/ama">AMA</a>
+        <a class="nav-item nav-link" [class.active]="pageType == top" routerLink="/top">Top Lajmet <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" [class.active]="pageType == new" routerLink="/new">Me te rejat</a>
+        <a class="nav-item nav-link" [class.active]="pageType == sport" routerLink="/sport">Sport</a>
+        <a class="nav-item nav-link" [class.active]="pageType == interesante" routerLink="/interesante">Interesante</a>
+        <a *ngIf='ama' class="nav-item nav-link special" [class.active]="pageType == ama" routerLink="/ama">AMA</a>
         </div>
     </div>
     <div class="user_profile-top">

@@ -10,7 +10,7 @@
     color:#ffb380;
     font-weight: 600;
     display: inline-block;
-    margin-left:14px;
+    /* margin-left:14px; */
     
 }
 
@@ -46,7 +46,7 @@
 
 
 .article{
-    display: flex;
+    /* display: flex; */
     font-size:13px;
     margin:0px auto;
     border-bottom:1px solid whitesmoke;
@@ -63,4 +63,16 @@
     color:#4286f4;
     font-size: 12px;
     font-weight: 600;
+}
+
+.bottom_bar{
+    background-color:whitesmoke;
+    vertical-align: bottom;
+    display: block;
+    padding-left:10px;
+    padding-right: 10px;
+}
+
+.picture_article{
+    display: flex;
 }
