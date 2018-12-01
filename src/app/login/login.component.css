@@ -1,0 +1,30 @@
+.page_login{
+    height:350px;
+    border:5px solid whitesmoke;
+    margin-right: 30px;
+    padding-top:50px;
+    padding-bottom: 50px;
+
+
+}
+
+.optional_login{
+    height:350px;
+    /* border:5px solid whitesmoke; */
+    padding-top:50px;
+}
+
+.login_content{
+    display:flex;
+    width:100%;
+    margin-left:13%;
+}
+
+.submit-btn{
+    float: right;
+}
+
+.site-color{
+    color:rgb(8, 56, 98);
+    font-weight: 600;
+}

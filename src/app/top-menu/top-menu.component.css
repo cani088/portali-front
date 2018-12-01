@@ -19,9 +19,10 @@
     
     color:white !important; 
     height:48px;
-    font-family:"Franklin Gothic Book";
+    /* font-family:"Franklin Gothic Book"; */
+    font-family: 'Raleway';
     font-weight: 600;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .nav-item{
@@ -29,11 +30,12 @@
     height:48px;
     width:120px;
     text-align: center;
+    padding-top:12px;
 }
 .nav-item:hover{
     color:white !important;
     background-color: #083862 !important;
-    border-bottom:3px solid #9274ac;
+    border-bottom:3px solid #6997c0 ;
 }
 
 .special{
@@ -43,13 +45,21 @@
 
 #search-top{
     height:30px;
-    border-radius: 3px;
+    border-radius: 8px;;
+    border:none;
     margin-left:100px;
-    width:30%;
+    width:200px;
+    padding-left:10px;
+    background: url('assets/images/search.svg');
 }
 
 .search-btn{
     height:30px;
     padding-top:0px;
     margin-left:7px;
+    margin-right: 5px;
+}
+
+.search_area{
+    margin-right: 8px;
 }
