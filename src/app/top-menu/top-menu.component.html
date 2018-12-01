@@ -6,19 +6,25 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-        <a class="nav-item nav-link" [class.active]="pageType == top" routerLink="/top">Top Lajmet <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" [class.active]="pageType == new" routerLink="/new">Me te rejat</a>
-        <a class="nav-item nav-link" [class.active]="pageType == sport" routerLink="/sport">Sport</a>
-        <a class="nav-item nav-link" [class.active]="pageType == interesante" routerLink="/interesante">Interesante</a>
-        <a *ngIf='ama' class="nav-item nav-link special" [class.active]="pageType == ama" routerLink="/ama">AMA</a>
+            <a class="nav-item nav-link" [class.active]="pageType == top" routerLink="/top">TOP LAJMET <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" [class.active]="pageType == new" routerLink="/new">MË TË REJAT</a>
+            <a class="nav-item nav-link" [class.active]="pageType == sport" routerLink="/sport">SPORT</a>
+            <a class="nav-item nav-link" [class.active]="pageType == interesante" routerLink="/interesante">INTERESANTE</a>
+            <a *ngIf='ama' class="nav-item nav-link special" [class.active]="pageType == ama" routerLink="/ama">AMA</a>
+            
         </div>
     </div>
+    <div>
+    </div>
+    <input type="text" name="" id="search-top" placeholder="Kërko ne portal">
+    <button class='btn btn-primary search-btn'>Kërko</button>
+    
     <div class="user_profile-top">
         <div *ngIf="isLoggedIn" class="user_data">
             <span>Besnik Cani</span>
         </div>
         <div *ngIf="!isLoggedIn">
-            <a routerLink="/login" routerActive='active' class='nav-item nav-link'>Kyquni</a>
+            <a routerLink="/login" routerActive='active' class='nav-item nav-link'>Kyqu</a>
         </div>
     </div>
 </nav>

@@ -7,9 +7,21 @@
 }
 
 .navbar_besi{
-    background-color:#9900ff;
+    /* background-color:#9900ff; */
+    /* background-image:linear-gradient(-90deg,#3cd3ad,#4cb8c4);  */
+    /* background-image:linear-gradient(-90deg,   #2c3e50,#265961);  */
+    /* background-image:linear-gradient(-90deg, #7f1494,#4a1877 );  */
+    /* background-image: linear-gradient(135deg, #4d1459 0%, #380849 100%); */
+    /* background-image: linear-gradient(256deg, #2f58a4 0%, #1e295e 100%); */
+    /* Lirimi */
+    background-image: linear-gradient(94deg, #083862 0%, #3c698f 100%);
+    /* background-image: linear-gradient(94deg, #462bdf 50%, #757575 100%); */
+    
     color:white !important; 
     height:48px;
+    font-family:"Franklin Gothic Book";
+    font-weight: 600;
+    font-size: 15px;
 }
 
 .nav-item{
@@ -20,10 +32,24 @@
 }
 .nav-item:hover{
     color:white !important;
-    background-color:#7b04ca !important;
+    background-color: #083862 !important;
+    border-bottom:3px solid #9274ac;
 }
 
 .special{
     background-color:green;
 }
 
+
+#search-top{
+    height:30px;
+    border-radius: 3px;
+    margin-left:100px;
+    width:30%;
+}
+
+.search-btn{
+    height:30px;
+    padding-top:0px;
+    margin-left:7px;
+}

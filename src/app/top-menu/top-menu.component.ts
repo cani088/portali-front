@@ -10,8 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 export class TopMenuComponent implements OnInit {
 
   public isLoggedIn=false;
-  public pageType;
-  // public ama=true;
+  public pageType='sport';
+  public ama=false;
   constructor(private route:ActivatedRoute) { 
     console.log('asdkamsdas',this.route.snapshot);
     // this.pageType=this.route.snapshot.url[0].path;
