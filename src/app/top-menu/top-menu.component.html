@@ -1,32 +1,42 @@
 
 <nav class="navbar navbar-expand-lg navbar-light navbar_besi mb-10">
-    <img src="assets/images/default-picture.svg" alt="" height="50px" width='auto'>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse ml-4" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link" [class.active]="pageType == top" routerLink="/top">TOP LAJMET <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" [class.active]="pageType == new" routerLink="/new">MË TË REJAT</a>
-            <a class="nav-item nav-link" [class.active]="pageType == sport" routerLink="/sport">SPORT</a>
-            <a class="nav-item nav-link" [class.active]="pageType == interesante" routerLink="/interesante">INTERESANTE</a>
-            <a *ngIf='ama' class="nav-item nav-link special" [class.active]="pageType == ama" routerLink="/ama">AMA</a>
-            
-        </div>
+
+    <div style="display:flex; justify-content:space-between">
+  <img src="assets/images/default-picture.svg" alt="" height="50px" width='auto'>
+  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button> -->
+
+  <div class="collapse navbar-collapse ml-5 margR" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" [class.active]="pageType == top" routerLink="/top">TOP LAJMET <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" [class.active]="pageType == new" routerLink="/new">MË TË REJAT</a>
+      <a class="nav-item nav-link" [class.active]="pageType == sport" routerLink="/sport">SPORT</a>
+      <a class="nav-item nav-link" [class.active]="pageType == interesante" routerLink="/interesante">INTERESANTE</a>
+      <a *ngIf='ama' class="nav-item nav-link special" [class.active]="pageType == ama" routerLink="/ama">AMA</a>
+
     </div>
-    <div>
-    </div>
+  </div>
+</div>
+
+  <div>
+  </div>
+  <div style="display:flex;flex-direction:row-reverse">
+
     <input type="text" name="" id="search-top" placeholder="Kërko ne portal">
-    <button class='btn btn-primary search-btn'>
+    <!-- <button class='btn btn-primary search-btn'>
         <img src="assets/images/search.svg" width="15px" height='auto' alt="">
-    </button>
-  
-    <div class="user_profile-top">
-        <div *ngIf="isLoggedIn" class="user_data">
-            <span>Besnik Cani</span>
-        </div>
-        <div *ngIf="!isLoggedIn">
-            <a routerLink="/login" routerActive='active' class='nav-item nav-link'>Login/Kyqu</a>
-        </div>
+    </button> -->
+    <!-- <input type="text" name="LastName" value="Mouse"> -->
+    <img src="assets/images/search.svg" width="15px" height="auto" class='search-btn'>
+  </div>
+  <div class="user_profile-top">
+    <div *ngIf="isLoggedIn" class="user_data">
+      <span>Besnik Cani</span>
     </div>
+    <div *ngIf="!isLoggedIn">
+      <a routerLink="/login" routerActive='active' class='nav-item nav-link'>Login/Kyqu</a>
+    </div>
+  </div>
 </nav>
