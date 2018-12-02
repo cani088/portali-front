@@ -32,9 +32,6 @@ body{
     font-size:10px;
 }
 
-
-
-
 .tags{
     /* display: flex; */
     margin-top: 50px;
@@ -58,12 +55,11 @@ body{
     padding:0px;
 }
 
-.nav-ul{
-    display:flex;
+.picture_info{
+    color:gray;
+    font-style: italic;
+    float: right;
 }
-
-
-
 
 .article_time{
     color:#656565;
@@ -72,12 +68,14 @@ body{
 
 
 
-.article_info{
+.article_info_article_page{
     font-size:10px;
     color:#ffb380;
     font-weight: 600;
     display: inline-block;
-    margin-left:14px;
+    background-color:whitesmoke;
+    width:100%;
+    vertical-align: middle;
 }
 
 .article_title{
@@ -110,3 +108,25 @@ body{
     font-weight: 600;
 }
 
+.total_likes{
+    font-size:30px;
+    color:#4286f4;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.article_time_article_page{
+    padding:10px;
+    color:gray;
+    background-color:whitesmoke;
+    float: right;
+    font-size: 15px;
+}
+
+.like_unlike{
+    margin-bottom:10px;
+}
+
+.like{
+    margin-left:30px;
+}

@@ -12,8 +12,16 @@ export class HomePageComponent implements OnInit {
   
   public pageType;
   public articles;
+  public randomLikes;
   constructor(private route:ActivatedRoute,private articleService:ArticleService) { 
     this.pageType=this.route.snapshot.url[0].path;
+    this.generateRandom();
+    // console.log('randomlikessssssssssssssss',this.randomLikes);  
+  }
+
+  generateRandom(){
+    this.randomLikes=Math.floor(Math.random()*360)+1;
+    console.log('randomlikessssssssssssssss',this.randomLikes);    
   }
 
   ngOnInit() {

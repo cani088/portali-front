@@ -1,24 +1,59 @@
-<div class="content-container col-md-8 col-sm-12">
-  <div class="article_content">
-    <h3 style='padding:10px;'>
-        {{articleData.title}}
-    </h3>
-    <div *ngIf='hasImage' class="article_image">
-        <img src="{{articleData.article_image}}" alt="" width="100%" height="auto">
-    </div>
-      <div class="article_body">
-        <div class="article_text mt-5" [innerHtml]="articleData.body"></div>
-        
-        <!-- If the article has tags display the tags div -->
-        <div *ngIf='hasTags' class="tags">
-            <span ><b> Shiko me shume lajme rreth: </b></span><br>
-            <a *ngFor="let tag of articleData.tags" href="index.html?tag={{tag.tag_body}}">
-                <div class="tag">{{tag.tag_body}}</div>
-            </a>
+<div class="row">
+    <div class="content-container col-md-8 col-sm-12">
+        <div class="article_content">
+            <h3 style='padding:10px;'>
+                {{articleData.title}}
+            </h3>
+            
+            <div *ngIf='hasImage' class="article_image">
+                <img src="{{articleData.article_image}}" alt="" width="100%" height="auto">
+                <span class='picture_info'>Info per fotografi</span>
+            </div>
+            <div class="article_body">
+                <div class="article_text mt-5" [innerHtml]="articleData.body"></div>
+                
+                
+                <div class="article_info_article_page">
+                    <img src="assets/images/like.svg" class='like_unlike like' height="20px" alt="">
+                    <span class='total_likes'>{{articleData.total_likes+randomLikes}}</span>
+                    <img src="assets/images/dislike.svg" class='like_unlike unlike' height="20px" alt="">
+                    <span class='article_time_article_page'>{{articleData.human_readable}}</span>
+                </div>
+                <!-- If the article has tags display the tags div -->
+                
+                
+                
+                <div *ngIf='hasTags' class="tags">
+                    <span ><b> Shiko me shume lajme rreth: </b></span><br>
+                    <a *ngFor="let tag of articleData.tags" href="index.html?tag={{tag.tag_body}}">
+                        <div class="tag">{{tag.tag_body}}</div>
+                    </a>
+                </div>
+                <!-- End the tags div -->
+            </div>
         </div>
-        <!-- End the tags div -->
-      </div>
-  </div>
-  
+    </div>
+    <div class="col-md-3 mt-5 col-sm-10">
+        <!-- asdasdasda -->
+        <div class="similar mb-4">
+            <h5>Lajme te ngjajshme</h5>
+            <ul class='list-group'>
+                <a href="#"><li class='list-group-item list-group-item-action'>Similar 1</li></a> 
+                <a href="#"><li class='list-group-item list-group-item-action'>Similar 2</li></a> 
+                <a href="#"><li class='list-group-item list-group-item-action'>Similar 3</li></a> 
+            
+            </ul>
+        </div>
+        
+        <div class="recomended">
+            <h5>Lajme te rekomanduara</h5>
+            <ul class='list-group'>
+                <a href="#"><li class='list-group-item list-group-item-action'>Recommended 1 </li></a> 
+                <a href="#"><li class='list-group-item list-group-item-action'>Recommended 2 </li></a> 
+                <a href="#"><li class='list-group-item list-group-item-action'>Recommended 3 </li></a> 
+            
+            </ul>
+        </div>
+    </div>
 </div>
 <app-comments></app-comments>

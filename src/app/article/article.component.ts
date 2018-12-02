@@ -23,8 +23,17 @@ export class ArticleComponent implements OnInit {
   //the id of the article
   public id;
 
+  //hehe
+  public randomLikes;
+
   constructor(private articleService:ArticleService,private route:ActivatedRoute) {
     this.id=route.snapshot.params['id'];
+    this.generateRandom();
+    // console.log('randomlikessssssssssssssss',this.randomLikes);  
+  }
+
+  generateRandom(){
+    this.randomLikes=Math.floor(Math.random()*5)+7;
   }
 
   ngOnInit() {
