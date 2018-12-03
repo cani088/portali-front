@@ -5,12 +5,10 @@
     margin:0px auto;
     font-family:Tahoma;
 }
-.margR
-{
+/* .margR{
     position: relative;
-
-left: 30%;
-}
+    left: 10%;
+} */
 .navbar_besi{
     /* background-color:#9900ff; */
     /* background-image:linear-gradient(-90deg,#3cd3ad,#4cb8c4);  */
@@ -21,15 +19,15 @@ left: 30%;
     /* Lirimi */
     background-image: linear-gradient(94deg, #083862 0%, #3c698f 100%);
     /* background-image: linear-gradient(94deg, #462bdf 50%, #757575 100%); */
-    
     color:white !important; 
     height:48px;
-    /* font-family:"Franklin Gothic Book"; */
     font-family: 'Raleway';
     font-weight: 600;
     font-size: 13px;
-    display: flex;
-    justify-content: space-between;
+    /* Koki 
+        display: flex;
+        justify-content: space-between; 
+    */
 }
 
 .nav-item{
@@ -38,11 +36,12 @@ left: 30%;
     width:120px;
     text-align: center;
     padding-top:12px;
+    cursor:pointer;
 }
 .nav-item:hover{
     color:white !important;
     background-color: #083862 !important;
-    border-bottom:3px solid #6997c0 ;
+    border-bottom:3px solid rgb(241, 198, 118) ;
 }
 
 .special{
@@ -76,7 +75,7 @@ left: 30%;
     margin-right: 8px;
 }
 
-.navbar-besi{
+/* .navbar-besi{
     display:flex;
     justify-content:space-between;
-}
+} */

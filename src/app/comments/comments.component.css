@@ -154,4 +154,11 @@
     height:20px;
   }
   
+
+  @media (max-width:576px) {
+    #comments-container{
+        margin-left:0px;
+    }
+
+}
   

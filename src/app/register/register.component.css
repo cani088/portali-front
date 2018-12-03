@@ -1,0 +1,20 @@
+
+.submit-btn{
+    float: right;
+}
+
+@media (min-width:785px) {
+    .register_form{
+        margin-left:25%;
+        margin-bottom:60px;
+    }
+}
+
+input{
+    border-left:5px solid rgb(12, 82, 143);;
+}
+
+.top-text{
+    font-family: verdana;
+    color:rgb(8, 56, 98);    
+}

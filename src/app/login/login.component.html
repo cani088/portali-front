@@ -1,43 +1,54 @@
-
-<!-- <h2>Kyquni ne faqen tone:</h2> -->
-<div class="login_content mt-5">
-  <!-- Page Login  Box-->
-  <div class="page_login col-md-4 col-sm-12">
-    <span class='site-color'>Kyquni nese keni llogari ne faqen tone </span>
-    <div class='mb-3'></div>
-    <form action="">
-      <div class="form-group">
-          <label for="username">Username</label>
-          <input type="text" name="username" class='form-control' placeholder="Username">
-          <label for="password"></label>
-    
-          <label for="password">Password</label>
-          <input type="password" name="password" class='form-control' placeholder="password">
+<div class="modal" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog  modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Kyquni ne faqe</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
+      <div class="modal-body">
+        <!-- <h2>Kyquni ne faqen tone:</h2> -->
+        <div class="login_content mt-5">
+          <!-- Page Login  Box-->
+          <div class="page_login col-md-6 col-sm-12">
+            <span class='site-color'>Kyquni nese keni llogari ne faqen tone </span>
+            <!-- <div class='mb-3'></div> -->
+            <form [formGroup]="myForm" >
+              <div class="form-group">
+                  <label for="username">Username</label>
+                  <input type="text" name="username" class='form-control' placeholder="Username">
+                  <label for="password"></label>
+            
+                  <label for="password">Password</label>
+                  <input type="password" name="password" class='form-control' placeholder="Password">
+              </div>
+              <a routerLink="/register" data-dismiss="modal">Regjistrohu</a>
+              <button type="submit" class="btn btn-primary submit-btn">Login</button>
+            
+            </form>
+          </div>
 
-      <button type="submit" class="btn btn-primary submit-btn">Login</button>
-     
-    </form>
+          <!-- Optional Login  Box-->
+          <div class="optional_login col-md-6 col-sm-12">
+            <span class='site-color'>Ose Kyquni nese keni llogari ne:</span>
+            <div class='mb-3'></div>
+
+            <ul class='optional_login_list list-group'>
+              <a href="#"> 
+                <li class='list-group-item list-group-item-action'>
+                  <img src="assets/images/facebook.svg" alt=""> Facebook
+                </li>
+              </a>
+              <a href="#">
+                <li class='list-group-item list-group-item-action'>
+                  <img src="assets/images/google.svg"  width="25px" height="auto" alt=""> Google
+                </li>
+                </a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <!-- Optional Login  Box-->
-  <div class="optional_login col-md-4 col-sm-12">
-    <span class='site-color'>Ose Kyquni nese keni llogari ne:</span>
-    <div class='mb-3'></div>
-
-    <ul class='optional_login_list list-group'>
-      <a href="#"> 
-        <li class='list-group-item list-group-item-action'>
-          <img src="assets/images/facebook.svg" alt=""> Facebook
-        </li>
-      </a>
-      <a href="#">
-        <li class='list-group-item list-group-item-action'>
-          <img src="assets/images/google.svg"  width="25px" height="auto" alt=""> Google
-        </li>
-        </a>
-    </ul>
-  </div>
-
-
 </div>

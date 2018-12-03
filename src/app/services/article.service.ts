@@ -26,5 +26,20 @@ export class ArticleService {
     return this.http.get(url);
   }
 
+  getRecommendedArticles(id){
+    let url=this._url+"/articles/"+id+"/recommanded";
+    return [];
+  }
+
+  getSimilarArticles(id){
+    let url=this._url+"/articles/"+id+"/similar";
+    return [];
+  }
+
+  getArticlesByTag(tag){
+    let url=this._url+"/articles/tag/"+tag;
+    return [];
+  }
+
 }
    

@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-light navbar_besi mb-10">
 
     <div style="display:flex; justify-content:space-between">
-  <img src="assets/images/default-picture.svg" alt="" height="50px" width='auto'>
+  <img src="assets/images/logo.png" alt="" height="50px" width='auto'>
   <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -36,7 +36,7 @@
       <span>Besnik Cani</span>
     </div>
     <div *ngIf="!isLoggedIn">
-      <a routerLink="/login" routerActive='active' class='nav-item nav-link'>Login/Kyqu</a>
+      <a data-toggle="modal" data-target="#exampleModalLong" routerActive='active' class='nav-item nav-link'>Login</a>
     </div>
   </div>
 </nav>

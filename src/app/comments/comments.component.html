@@ -1,7 +1,7 @@
 <div id='comments-container' class='col-md-8 col-sm-12 mt-5'> 
   <h5>Shto nje koment te ri</h5>
   <div id='form'>
-      <form action="" method="POST">
+      <form [formGroup]="myForm" >
           <textarea name="comment" class='col-md-8 col-sm-12' id="write_comment_textarea" cols="100" rows="5" resizeable='false'></textarea>
           <br>
           <input type="submit" (click)="submitComment()" value="Submit" class='btn btn-primary'/>

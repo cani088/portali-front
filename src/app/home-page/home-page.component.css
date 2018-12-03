@@ -24,9 +24,9 @@
 
 .link_to_article{
     text-decoration:none;
-    color:#4286f4;
     font-size: 16px;
-
+    color:rgb(8, 56, 98);        
+    font-weight: 600;
 }
 
 .article_summary_text{
@@ -39,8 +39,7 @@
 .article_image{
     display: inline-block;
     margin-right: 20px;
-    width:150px;
-    height:150px;
+    width:200px;
     overflow:hidden;
 }
 
@@ -49,7 +48,7 @@
     /* display: flex; */
     font-size:13px;
     margin:0px auto;
-    border-bottom:1px solid whitesmoke;
+    /* border-bottom:1px solid whitesmoke; */
     padding:5px;
 }
 
@@ -75,4 +74,63 @@
 
 .picture_article{
     display: flex;
+}
+
+.imgWraperArticle img{
+
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+@media (max-width:576px) {
+
+    .picture_article {
+
+        display: block;
+    }
+
+    .article_title {
+        margin: 15px 0 10px 0;
+    }
+
+    .bottom_bar {
+
+        padding-top: 2px;
+        height: 21px;
+    }
+
+    .article_info, .article_info_bottom {
+
+        font-size: 11px;
+    }
+
+    .article {
+
+        padding: 10px;
+    }
+
+    .article_image {
+
+        display: inline-block;
+        margin-right: 20px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .imgWraperArticle {
+
+        height: 200px;
+    }
+
+    .article_summary {
+
+        display: none;
+    }
+
+    .link_to_article {
+
+        font-size: 18px;
+    }
 }

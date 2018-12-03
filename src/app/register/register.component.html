@@ -1,0 +1,29 @@
+<h4 class='top-text'>Regjistrohuni në faqen tonë</h4>
+<div class="register_form mt-2">
+  <form [formGroup]="myForm" (ngSubmit)="register()" class='col-md-6 col-sm-12'>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input  formControlName="username" type="text" required name='username' class="form-control" id="username" placeholder="Username">
+      <small id="emailHelp" class="form-text text-muted">(Me këtë emër do të identifikoheni në faqen tonë)</small>
+    </div>
+    <div class="form-group">
+      <label for="mbiemri">Email</label>
+      <input formControlName="email" type="email" required name='email' class="form-control" id="email" placeholder="E-mail">
+      <small id="emailHelp" class="form-text text-muted">(Duhet të jetë një e-mail valid në të cilën ju keni qasje)</small>
+
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Passwordi/Fjalekalimi</label>
+      <input formControlName="password" type="password" required class="form-control" id="exampleInputPassword1" placeholder="Passwordi">
+    </div>
+    <div class="form-group mb-5">
+      <label for="exampleInputPassword1">Knofirmoni Passwordin</label>
+      <input formControlName="password_2" type="password" required class="form-control" id="exampleInputPassword1" placeholder="Konfirmoni Passwordin">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Viti i lindjes (opsional)</label>
+      <input formControlName="birth_year" name="birth_year" type="number" min="1930" max="2018" class="form-control" id="exampleInputPassword1" placeholder="Viti i lindjes">
+    </div>
+    <button type="button" (click)="register()" class="btn btn-primary submit-btn">Regjistrohuni</button>
+  </form>
+</div>

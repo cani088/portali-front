@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleService } from '../services/article.service';
 import { ActivatedRoute } from '@angular/router';
+import { FormsModule, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-comments',
@@ -17,15 +18,24 @@ export class CommentsComponent implements OnInit {
   //boolean to check if post has comments 
   public hasComments=false;
 
+  //forma :/
+  public myForm;
   //store total number of comments
   public totalComments=0;
-  constructor(private articleService:ArticleService, private route:ActivatedRoute) {
-    console.log('Comments component loaded');
-    
+  
+  constructor(private articleService:ArticleService, private route:ActivatedRoute, private fb:FormBuilder) {    
     this.id=route.snapshot.params['id'];
   }
   ngOnInit(){
-    
+    this.myForm=this.fb.group({
+      username:"",
+      name:"",
+      last_name:"",
+      email:"",
+      password:"",
+      password_2:"",
+      birth_year:"" 
+    });
   }
 
   ngAfterViewInit(){

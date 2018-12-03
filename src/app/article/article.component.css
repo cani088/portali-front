@@ -130,3 +130,40 @@ body{
 .like{
     margin-left:30px;
 }
+
+.side-list-item{
+    border-left:5px solid whitesmoke;
+    list-style-type:none;
+    padding-left:6px;
+    padding-top:8px;
+    padding-bottom:8px;
+    margin-bottom:2px;
+    font-family: 'verdana';
+    font-weight: 600;
+    font-size:13px;
+    text-decoration:none;
+    color:#083a8b;
+}
+
+.side-list-item:hover{
+    border-left:5px solid #083a8b;
+    background-color:whitesmoke;
+    text-decoration: none;
+}
+
+/* .border-orange{
+    border-left:5px solid rgb(248, 185, 67);
+} */
+
+.border-orange:hover{
+    border-left:5px solid  rgb(224, 161, 42);
+}
+
+@media (max-width:576px) {
+    .content-container{
+        margin-left:10px;
+    }
+
+  
+
+}

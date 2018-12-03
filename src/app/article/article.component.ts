@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ArticleService } from '../services/article.service';
 import { ActivatedRoute } from '@angular/router';
 
-
-
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
@@ -37,6 +35,8 @@ export class ArticleComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    
     this.articleService.getArticleData(this.id)
       .subscribe((data)=>{
         this.articleData=data[0];

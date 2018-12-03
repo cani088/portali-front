@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, FormBuilder } from '@angular/forms';
+
 
 @Component({
   selector: 'app-login',
@@ -7,9 +10,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  closeResult: string;
+  public myForm;
+  constructor(private modalService: NgbModal,public fb:FormBuilder) {}
 
-  ngOnInit() {
+  open(content) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
   }
 
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
+    }
+  }
+
+  ngOnInit(){
+    this.myForm=this.fb.group({
+      username:"",
+      name:"",
+      last_name:"",
+      email:"",
+      password:"",
+      password_2:"",
+      birth_year:"" 
+    });
+
+  }
 }

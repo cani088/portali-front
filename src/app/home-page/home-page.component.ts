@@ -20,8 +20,7 @@ export class HomePageComponent implements OnInit {
   }
 
   generateRandom(){
-    this.randomLikes=Math.floor(Math.random()*360)+1;
-    console.log('randomlikessssssssssssssss',this.randomLikes);    
+    this.randomLikes=Math.floor(Math.random()*360)+1;   
   }
 
   ngOnInit() {
@@ -30,8 +29,8 @@ export class HomePageComponent implements OnInit {
       this.articles=data;
 
       this.articles.forEach((e)=>{
-        if(e.body.length>300){
-          e.body=e.body.substring(0,300)+" ....";
+        if(e.body.length>200){
+          e.body=e.body.substring(0,200)+" ....";
         }
       });
     });
