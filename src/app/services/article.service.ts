@@ -21,8 +21,12 @@ export class ArticleService {
     return this.http.get(url);
   }
 
-  getArticles(type){
-    let url=this._url+"/articles/"+type;
+  getArticles(type,search_parameter){
+    if(search_parameter){
+      var url=this._url+"/articles/search/"+search_parameter;
+    }else{
+      var url=this._url+"/articles/"+type;
+    }
     return this.http.get(url);
   }
 

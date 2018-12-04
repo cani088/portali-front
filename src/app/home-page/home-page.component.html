@@ -13,6 +13,9 @@
                                 <div class="imgWraperArticle" *ngIf='!article.article_image'>
                                     <img src="assets/images/default-picture.svg" alt="" height="120px" width='auto'>
                                 </div>
+                                <div class="article_date hiddeDesktop">
+                                    <span class="date_summary">10.10.2010, Gjilan</span>
+                                </div>
                             </a>
                         </div>
                     </div>  
@@ -29,17 +32,21 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="bottom_bar">
-                    <div class="place_time">
-                        Prishtine, 03.12.2018
+              
+                <div class="mt-2 bottom_bar">
+                    <div class="infoWraper">
+                        <div class="article_date hiddeMobile">
+                            <span class="date_summary">10.10.2010, Gjilan</span>
+                        </div>
+                        <div class="article_info">
+                            <span class='likes_summary'> {{article.total_likes}} Likes</span>
+                            <span class='comments_summary'> {{article.total_comments}} Comments</span>
+                        </div>
                     </div>
-                    <div class="article_info">
-                        <span class='likes_summary'> {{article.total_likes}} Likes</span>
-                        <span class='comments_summary'> {{article.total_comments}} Comments</span>
-                    </div>
-                    <div class='article_info_bottom'>
-                        <span *ngIf="article.created_at_t>0" class='article_time article_time'>{{article.human_readable_time}}</span>
+                    <div class="infoWraper">
+                        <div class='article_info_bottom'>
+                            <span *ngIf="article.created_at_t>0" class='article_time article_time'>{{article.human_readable_time}}</span>
+                        </div>
                     </div>
                 </div>
             </div>

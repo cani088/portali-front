@@ -13,8 +13,14 @@ export class HomePageComponent implements OnInit {
   public pageType;
   public articles;
   public randomLikes;
+  public search_parameter=false;
   constructor(private route:ActivatedRoute,private articleService:ArticleService) { 
     this.pageType=this.route.snapshot.url[0].path;
+
+    if(this.pageType=='search'){
+      this.search_parameter=route.snapshot.params['parameter'];
+    }
+
     this.generateRandom();
     // console.log('randomlikessssssssssssssss',this.randomLikes);  
   }
@@ -24,7 +30,7 @@ export class HomePageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.articleService.getArticles(this.pageType)
+    this.articleService.getArticles(this.pageType,this.search_parameter)
     .subscribe((data)=>{
       this.articles=data;
 

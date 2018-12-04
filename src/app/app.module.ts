@@ -36,6 +36,7 @@ import { ReactiveFormsModule } from '@angular/forms';
       {path:'new',component:HomePageComponent},
       {path:'interesante',component:HomePageComponent},
       {path:'top',component:HomePageComponent},
+      {path:'search/:parameter',component:HomePageComponent},
       {path:'register',component:RegisterComponent}
     ]),
   ],
