@@ -25,8 +25,6 @@ function collapseComment(id){
 }
   
 function expandComment(id){
-    console.log('id',id);
-
     $divs=document.getElementsByClassName('parent-'+id);
     this.getDiv('collapse_btn_'+id).style.display='inline-block';
     this.getDiv('expand_btn_'+id).style.display='none';

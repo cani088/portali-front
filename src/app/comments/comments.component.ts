@@ -39,10 +39,13 @@ export class CommentsComponent implements OnInit {
   }
 
   ngAfterViewInit(){
+
+    //get comments data where id is the article id
     this.articleService.getComments(this.id)
     .subscribe((data)=>{
       this.comments=data;
       this.totalComments=this.comments.length;
+      //if there are comments for the article we call the loadComments method
       if(this.totalComments>0){
         this.loadComments();
       }

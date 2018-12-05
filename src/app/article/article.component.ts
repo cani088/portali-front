@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ArticleComponent implements OnInit {
   
   //on articleData we will store the reponse from server
-  public articleData:any;
+  public articleData;
 
   //variale to check if the article has Tags
   public hasTags=false;
@@ -27,7 +27,6 @@ export class ArticleComponent implements OnInit {
   constructor(private articleService:ArticleService,private route:ActivatedRoute) {
     this.id=route.snapshot.params['id'];
     this.generateRandom();
-    // console.log('randomlikessssssssssssssss',this.randomLikes);  
   }
 
   generateRandom(){
@@ -35,12 +34,10 @@ export class ArticleComponent implements OnInit {
   }
 
   ngOnInit() {
-
-    
     this.articleService.getArticleData(this.id)
       .subscribe((data)=>{
-        this.articleData=data[0];
-             
+        this.articleData=data;
+        
         if(this.articleData.tags.length>0){
           this.hasTags=true;
         }
