@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -8,14 +7,11 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./top-menu.component.css']
 })
 export class TopMenuComponent implements OnInit {
-
+  public pageType;
   public isLoggedIn=false;
-  public pageType='sport';
   public ama=false;
-  constructor(private route:ActivatedRoute) { 
-    console.log('asdkamsdas',this.route.snapshot);
-    // this.pageType=this.route.snapshot.url[0].path;
-    // console.log('this.pagetype',this.pageType);
+  constructor() { 
+   
   }
   ngOnInit() {
   }

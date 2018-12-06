@@ -41,7 +41,7 @@
 .nav-item:hover{
     color:white !important;
     background-color: #083862 !important;
-    border-bottom:3px solid rgb(241, 198, 118) ;
+    border-bottom:3px solid rgb(101, 233, 162) ;
 }
 
 .special{
@@ -73,6 +73,11 @@
 
 .search_area{
     margin-right: 8px;
+}
+
+.activeTab{
+    background-color:rgb(101, 233, 162);
+    color:#083862 !important;
 }
 
 /* .navbar-besi{

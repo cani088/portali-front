@@ -10,11 +10,12 @@
 
   <div class="collapse navbar-collapse ml-5 margR" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" [class.active]="pageType == top" routerLink="/top">TOP LAJMET <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" [class.active]="pageType == new" routerLink="/new">MË TË REJAT</a>
-      <a class="nav-item nav-link" [class.active]="pageType == sport" routerLink="/sport">SPORT</a>
-      <a class="nav-item nav-link" [class.active]="pageType == interesante" routerLink="/interesante">INTERESANTE</a>
-      <a *ngIf='ama' class="nav-item nav-link special" [class.active]="pageType == ama" routerLink="/ama">AMA</a>
+      <div>{{pageType}}</div>
+      <a class="nav-item nav-link"  [routerLinkActive]="['activeTab']" routerLink="/top">TOP LAJMET <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" [routerLinkActive]="['activeTab']" routerLink="/new">MË TË REJAT</a>
+      <a class="nav-item nav-link"  [routerLinkActive]="['activeTab']" routerLink="/sport">SPORT</a>
+      <a class="nav-item nav-link" [routerLinkActive]="['activeTab']" routerLink="/interesante">INTERESANTE</a>
+      <a *ngIf='ama' class="nav-item nav-link special" [routerLinkActive]="['activeTab']" routerLink="/ama">AMA</a>
 
     </div>
   </div>

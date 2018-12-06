@@ -16,7 +16,7 @@ export class HomePageComponent implements OnInit {
   public search_parameter=false;
   constructor(private route:ActivatedRoute,private articleService:ArticleService) { 
     this.pageType=this.route.snapshot.url[0].path;
-
+    console.log('pagetype',this.pageType);
     if(this.pageType=='search'){
       this.search_parameter=route.snapshot.params['parameter'];
     }

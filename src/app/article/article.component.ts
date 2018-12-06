@@ -25,7 +25,7 @@ export class ArticleComponent implements OnInit {
   public randomLikes;
 
   constructor(private articleService:ArticleService,private route:ActivatedRoute) {
-    this.id=route.snapshot.params['id'];
+    this.id=this.route.snapshot.params['id'];
     this.generateRandom();
   }
 
@@ -37,7 +37,7 @@ export class ArticleComponent implements OnInit {
     this.articleService.getArticleData(this.id)
       .subscribe((data)=>{
         this.articleData=data;
-        
+
         if(this.articleData.tags.length>0){
           this.hasTags=true;
         }
