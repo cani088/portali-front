@@ -1,6 +1,19 @@
 
-    <div class="mb-4">Filters</div>
     <div class="container">
+        <div class="mb-4 mt-4">
+            <div class="row">
+                <div class="col-md-3 col-sm-12">
+                    <label for="sort">Top lajmet e: &nbsp;</label>
+                    <select name="sort" id="sort">
+                        <option value="last_24">24 Orëve</option>
+                        <option value="last_week">Javes se fundit</option>
+                        <option value="last_month">Muajit te fundit</option>
+                        <option value="last_year">Vitit te fundit</option>
+                        <option value="all_time">Qe nga fillimit</option>
+                    </select>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div *ngFor="let article of articles" class="article col-md-10 col-sm-12 mb-3">
                 <div class='picture_article'>
@@ -16,7 +29,7 @@
                             </a>
                             <div class="article_date hiddeDesktop">
                                 <span class='article_category_phone'>Sport, Vendi, Ekonomi</span>
-                                <span class="date_summary">10.10.2010 <div *ngIf='article.article_place'><span>,</span> </div>Gjilan</span>
+                                <span class="date_summary"> {{article.article_date}}, {{article.article_place}}</span>
                             </div>
                           
                         </div>
@@ -38,7 +51,7 @@
                 <div class="mt-2 bottom_bar">
                     <div class="infoWraper">
                         <div class="article_date hiddeMobile">
-                            <span class="date_summary">{{article.date}}, {{article.Place}}</span>
+                            <span class="date_summary"> {{article.article_date}}, {{article.article_place}}</span>
                         </div>
                         <div class="article_info">
                             <span class='likes_summary'> {{article.total_likes}} Like</span>

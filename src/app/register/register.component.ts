@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { UserService } from '../services/user.service';
+
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-register',
@@ -8,14 +12,15 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
   public myForm:FormGroup;
-  constructor(private fb:FormBuilder) { }
+  public hasError=false;
+  public errorMessage='';
+  public success=false;
+  constructor(private fb:FormBuilder,private userService:UserService,private router:Router) { }
 
   ngOnInit() {
     this.myForm=this.fb.group({
       username:"",
-      name:"",
-      last_name:"",
-      email:"",
+      user_email:"",
       password:"",
       password_2:"",
       birth_year:"" 
@@ -25,9 +30,18 @@ export class RegisterComponent implements OnInit {
 
 
   register(){
-    
-    this.myForm.valueChanges.subscribe((data)=>{
-      console.log("dada",data);
-    });
+    var res=this.userService.register(this.myForm.value);
+    res.subscribe((data)=>{
+      if(data.success==1){
+        //when the user has been registered successfully
+        this.success=true;
+        this.hasError=false;
+        this.router.navigate(['/top'])
+      }else{
+        //when there has been an error
+        this.hasError=true;
+        this.errorMessage=data.message;
+      }
+    });  
   }
 }

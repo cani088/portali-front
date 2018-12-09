@@ -191,5 +191,11 @@
         line-height: 22px;
     }
 
+}
 
+#sort{
+    height:30px;
+    background-color:#083862;
+    color:white;
+    border:0px;
 }

@@ -23,7 +23,7 @@ export class UserService {
 
   register(data){
     let url=this._url+"/user/register";
-    return [];
+    return this.http.post(url,data);
   }  
 
   login(data){
