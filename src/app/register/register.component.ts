@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
 
   register(){
     var res=this.userService.register(this.myForm.value);
-    res.subscribe((data)=>{
+    res.subscribe((data:any)=>{
       if(data.success==1){
         //when the user has been registered successfully
         this.success=true;

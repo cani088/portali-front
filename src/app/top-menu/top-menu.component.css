@@ -10,34 +10,28 @@
     left: 10%;
 } */
 .navbar_besi{
-    /* background-color:#9900ff; */
-    /* background-image:linear-gradient(-90deg,#3cd3ad,#4cb8c4);  */
-    /* background-image:linear-gradient(-90deg,   #2c3e50,#265961);  */
-    /* background-image:linear-gradient(-90deg, #7f1494,#4a1877 );  */
-    /* background-image: linear-gradient(135deg, #4d1459 0%, #380849 100%); */
-    /* background-image: linear-gradient(256deg, #2f58a4 0%, #1e295e 100%); */
-    /* Lirimi */
     background-image: linear-gradient(94deg, #083862 0%, #3c698f 100%);
-    /* background-image: linear-gradient(94deg, #462bdf 50%, #757575 100%); */
     color:white !important; 
     height:48px;
     font-family: 'Raleway';
     font-weight: 600;
     font-size: 13px;
-    /* Koki 
-        display: flex;
-        justify-content: space-between; 
-    */
+    display: flex;
 }
 
-.nav-item{
+.nav-item, .nav-item-mobile{
     color:white !important;
-    height:48px;
+    height:49px;
     width:120px;
     text-align: center;
     padding-top:12px;
     cursor:pointer;
 }
+
+.nav-item-mobile{
+    padding-right:30px;
+}
+
 .nav-item:hover{
     color:white !important;
     background-color: #083862 !important;
@@ -75,11 +69,54 @@
     margin-right: 8px;
 }
 
+.hidden_desktop{
+    display: none;
+}
+
+
 .activeTab{
     background-color:rgb(101, 233, 162);
     color:#083862 !important;
 }
 
+
+@media (max-width:884px) {
+
+    .navbar_besi {
+        width:100%;
+        height: auto;
+    }
+
+    .nav-item {
+
+        width: auto;
+    }
+
+    .nav-item a {
+
+        width: auto;
+        text-align: right;
+    }
+
+    .navLogin {
+
+        padding-right: 0;
+        text-align: right;
+    }
+
+    .hidden_mobile{
+        display:none;
+    }
+
+    .hidden_desktop{
+        display: inline-block;
+    }
+
+    .navbar-toggler{
+        float: right;
+    }
+
+}
 /* .navbar-besi{
     display:flex;
     justify-content:space-between;

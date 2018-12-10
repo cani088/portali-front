@@ -1,25 +1,20 @@
 
-<nav class="navbar navbar-expand-lg navbar-light navbar_besi mb-10">
+<nav class="navbar navbar-expand-lg navbar-light navbar_besi hidden_mobile mb-10">
 
-    <div style="display:flex; justify-content:space-between">
-  <a routerLink="/top"><img src="assets/images/logo.png" alt="" height="50px" width='auto'></a>
-  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button> -->
+  <!-- <div style="display:flex; justify-content:space-between"> -->
+  <div>
+    <div class="collapse navbar-collapse ml-5" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+      <a routerLink="/top"><img src="assets/images/logo.png" alt="" height="50px" width='auto'></a>
+        <a class="nav-item nav-link"  [routerLinkActive]="['activeTab']" routerLink="/top">TOP LAJMET <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" [routerLinkActive]="['activeTab']" routerLink="/new">MË TË REJAT</a>
+        <a class="nav-item nav-link"  [routerLinkActive]="['activeTab']" routerLink="/sport">SPORT</a>
+        <a class="nav-item nav-link" [routerLinkActive]="['activeTab']" routerLink="/interesante">INTERESANTE</a>
+        <a *ngIf='ama' class="nav-item nav-link special" [routerLinkActive]="['activeTab']" routerLink="/ama">AMA</a>
 
-  <div class="collapse navbar-collapse ml-5 margR" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <div>{{pageType}}</div>
-      <a class="nav-item nav-link"  [routerLinkActive]="['activeTab']" routerLink="/top">TOP LAJMET <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" [routerLinkActive]="['activeTab']" routerLink="/new">MË TË REJAT</a>
-      <a class="nav-item nav-link"  [routerLinkActive]="['activeTab']" routerLink="/sport">SPORT</a>
-      <a class="nav-item nav-link" [routerLinkActive]="['activeTab']" routerLink="/interesante">INTERESANTE</a>
-      <a *ngIf='ama' class="nav-item nav-link special" [routerLinkActive]="['activeTab']" routerLink="/ama">AMA</a>
-
+      </div>
     </div>
   </div>
-</div>
 
   <div>
   </div>
@@ -38,6 +33,51 @@
     </div>
     <div *ngIf="!isLoggedIn">
       <a data-toggle="modal" data-target="#exampleModalLong" routerActive='active' class='nav-item nav-link'>Login</a>
+    </div>
+  </div>
+</nav>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light navbar_besi hidden_desktop mb-10">
+  <a class="navbar-brand" href="#">
+    <img src="assets/images/logo.png" width="auto" height="40" alt="">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <img src="/assets/images/menu.svg" width="auto" height="20px" alt="">
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link nav-item-mobile" href="#">TOP LAJMET <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-item-mobile " href="#">MË TË REJAT</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-item-mobile" href="#">SPORT</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-item-mobile" href="#">INTERESANTE</a>
+      </li>
+    </ul>
+    <div style="position: relative;">
+
+      <input type="text" name="" id="search-top" placeholder="Kërko ne portal">
+      <!-- <button class='btn btn-primary search-btn'>
+          <img src="assets/images/search.svg" width="15px" height='auto' alt="">
+      </button> -->
+      <!-- <input type="text" name="LastName" value="Mouse"> -->
+      <!-- <img src="assets/images/search.svg" width="15px" height="auto" class='search-btn'> -->
+    </div>
+    <div class="user_profile-top">
+      <div *ngIf="isLoggedIn" class="user_data">
+        <span>Besnik Cani</span>
+      </div>
+      <div *ngIf="!isLoggedIn">
+        <a data-toggle="modal" data-target="#exampleModalLong" routerActive='active' class='nav-item nav-item-mobile nav-link navLogin'>Login</a>
+      </div>
     </div>
   </div>
 </nav>
