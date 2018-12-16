@@ -12,16 +12,14 @@
             <div class="article_body">
                 <div class="article_text mt-5" [innerHtml]="articleData.body"></div>
                 
-                
+                <!-- Likes and dislikes -->
                 <div class="article_info_article_page">
-                    <img src="assets/images/like.svg" class='like_unlike like' height="20px" alt="">
+                    <img (click)="likeArticle()" src="assets/images/like.svg" class='like_unlike like' height="20px" alt="">
                     <span class='total_likes'>{{articleData.total_likes}}</span>
-                    <img src="assets/images/dislike.svg" class='like_unlike unlike' height="20px" alt="">
+                    <img (click)="unLikeArticle()" src="assets/images/dislike.svg" class='like_unlike unlike' height="20px" alt="">
                     <span class='article_time_article_page'>{{articleData.human_readable}}</span>
                 </div>
                 <!-- If the article has tags display the tags div -->
-                
-                
                 
                 <div *ngIf='hasTags' class="tags">
                     <span ><b> Shiko me shume lajme rreth: </b></span><br>

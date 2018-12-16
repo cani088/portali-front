@@ -125,6 +125,7 @@ body{
 
 .like_unlike{
     margin-bottom:10px;
+    cursor:pointer;
 }
 
 .like{

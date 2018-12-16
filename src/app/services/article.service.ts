@@ -45,5 +45,19 @@ export class ArticleService {
     return [];
   }
 
+  likeArticle(id){
+    let url=this._url+"/article/like";
+    return this.http.post(url,{article_id:id});
+  }
+  
+  unLikeArticle(id){
+    let url=this._url+"/article/unlike";
+    return this.http.post(url,{article_id:id});
+  }
+
+  submitComment(comment_data){
+    let url=this._url+"/comment/submit";
+    return this.http.post(url,comment_data);
+  }
 }
    

@@ -22,19 +22,16 @@ export class CommentsComponent implements OnInit {
   public myForm;
   //store total number of comments
   public totalComments=0;
+
+  //if the comment form is empty the user can not submit
+  public canSubmit=false;
   
   constructor(private articleService:ArticleService, private route:ActivatedRoute, private fb:FormBuilder) {    
     this.id=route.snapshot.params['id'];
   }
   ngOnInit(){
     this.myForm=this.fb.group({
-      username:"",
-      name:"",
-      last_name:"",
-      email:"",
-      password:"",
-      password_2:"",
-      birth_year:"" 
+      comment:""
     });
   }
 
@@ -70,8 +67,8 @@ export class CommentsComponent implements OnInit {
     
     comment_content+=`<div class='buttons_below'>${this.appendButtons(e)}</div>`;
     
-    finalString+=`<div class="${type} parent-${e.parent}"  style="border-left:1px solid #e0e0e0" id="c-${e.comment_id}">`;
-    finalString+=`<span class="user_name">${e.user_name}</span>`;
+    finalString+=`<div class="${type} parent-${e.parent}" style="border-left:1px solid #e0e0e0" id="c-${e.comment_id}">`;
+    finalString+=`<span class="user_name">${e.username}</span>`;
     finalString+=`<span class="comment_time">${e.human_readable}</span>`;
     finalString+=`<span class="likes_value">${e.total_likes} Likes</span>`;
     finalString+=comment_content;
@@ -92,25 +89,49 @@ export class CommentsComponent implements OnInit {
         finalString+=`<button id='expand_btn_${e.comment_id}' class='expand_btn' onClick='expandComment(${e.comment_id})'>Expand <img src='/assets/images/down-arrow.svg' width='10px' height='10px'/></button>`;
     finalString+='</div>';
     finalString+=`<div class='reply_textarea' id='textarea-${e.comment_id}'>`;
-        finalString+="<form method='POST' action='/comment/reply'>"
-            finalString+=`<input type='hidden' name='comment_id' value='${e.comment_id}'/>`;
-            finalString+="<textarea placeholder='reply to comment' cols='80' name='comment_body' rows='4'></textarea>";
-            finalString+="<input type='submit' class='reply_button' value='Reply'/>";
-            finalString+=`<button type='button' class='reply_button' onClick='cancelReply(${e.comment_id})'>cancel</button>`;
-        finalString+="</form>"
+       
+          finalString+=`<input type='hidden' name='comment_id' value='${e.comment_id}'/>`;
+          finalString+="<textarea placeholder='reply to comment' cols='80' name='comment_body' rows='4'></textarea>";
+          finalString+=`<input type='submit' class='reply_button' onClick='submitReply(${e.comment_id})' value='Reply'/>`;
+          finalString+=`<button type='button' class='reply_button' onClick='cancelReply(${e.comment_id})'>cancel</button>`;
+     
     finalString+="</div>";
     return finalString;
   }
 
-  submitComment(){
-    
-    console.log('bes');
+  submitReply(id){
+    return this.submitComment(id);
+  }
 
-
+  submitComment(parent){    
+    var comment_data={
+      parent:parent,
+      comment_body:this.myForm.value.comment,
+      article_id:this.id
+    };
+    var res=this.articleService.submitComment(comment_data);
+    res.subscribe((data:any)=>{
+      if(data.success==1){
+        //when the user has been registered successfully
+        data.comment.total_likes=0;
+        data.comment.human_readable='2 seconds ago';
+        if(parent==0){
+          document.getElementById('comments-container').insertAdjacentHTML('beforeend',this.appendComment(data.comment,'main'));
+        }else{
+          document.getElementById('c-'+parent).insertAdjacentHTML('beforeend',this.appendComment(data.comment,'child'));
+      }
+        console.log('data on success',data);
+      }else{
+        //when there has been an error
+        console.log('data on failure',data);
+      }
+    }); 
   }
 
   besnik(){
     console.log('bes');
   }
+
+
 
 }

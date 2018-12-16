@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ArticleService } from '../services/article.service';
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
@@ -10,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ArticleComponent implements OnInit {
   
   //on articleData we will store the reponse from server
-  public articleData;
+  public articleData:any;
 
   //variale to check if the article has Tags
   public hasTags=false;
@@ -24,9 +25,13 @@ export class ArticleComponent implements OnInit {
   //hehe
   public randomLikes;
 
+  //form
+  public formGroup;
+
   constructor(private articleService:ArticleService,private route:ActivatedRoute) {
     this.id=this.route.snapshot.params['id'];
     this.generateRandom();
+  
   }
 
   generateRandom(){
@@ -47,5 +52,33 @@ export class ArticleComponent implements OnInit {
         }
       });
   }
+
+  likeArticle(){
+    if(this.articleData.is_like==1){
+      return false;
+    }
+    this.articleService.likeArticle(this.id)
+      .subscribe((data:any)=>{
+        if(data.success==1){
+          this.articleData.is_like=1;
+          this.articleData.total_likes+=2;
+        }
+      });
+  }
+
+  unLikeArticle(){
+    if(this.articleData.is_like==0){
+      return false;
+    }
+    this.articleService.unLikeArticle(this.id)
+    .subscribe((data:any)=>{
+      if(data.success==1){
+        this.articleData.is_like=0;
+        this.articleData.total_likes-=2;
+      }
+    });
+  }
+
+
 
 }
