@@ -14,9 +14,13 @@
                 
                 <!-- Likes and dislikes -->
                 <div class="article_info_article_page">
-                    <img (click)="likeArticle()" src="assets/images/like.svg" class='like_unlike like' height="20px" alt="">
+                    <img *ngIf='articleData.like_type==0 || articleData.like_type==null' (click)="likeArticle()" src="assets/images/like.svg" class='like_unlike like' height="20px" alt="">
+                    <img *ngIf='articleData.like_type==1' (click)="removeVote()" src="assets/images/like-full.svg" class='like_unlike like' height="20px" alt="">
+                    
                     <span class='total_likes'>{{articleData.total_likes}}</span>
-                    <img (click)="unLikeArticle()" src="assets/images/dislike.svg" class='like_unlike unlike' height="20px" alt="">
+                    <img *ngIf='articleData.like_type==0' (click)="removeVote()" src="assets/images/dislike-full.svg" class='like_unlike unlike' height="20px" alt="">
+                    <img *ngIf='articleData.like_type==1 || articleData.like_type==null' (click)="unLikeArticle()" src="assets/images/dislike.svg" class='like_unlike unlike' height="20px" alt="">
+                    <!-- <img (click)="unLikeArticle()" src="assets/images/dislike.svg" class='like_unlike unlike' height="20px" alt=""> -->
                     <span class='article_time_article_page'>{{articleData.human_readable}}</span>
                 </div>
                 <!-- If the article has tags display the tags div -->

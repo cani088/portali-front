@@ -54,28 +54,63 @@ export class ArticleComponent implements OnInit {
   }
 
   likeArticle(){
-    if(this.articleData.is_like==1){
+
+    if(this.articleData.like_type==1){
       return false;
     }
+
+    if(this.articleData.like_type==0){
+      this.articleData.total_likes+=2;
+    }
+
+    if(this.articleData.like_type==null){
+      this.articleData.total_likes+=1;
+    }
+
+    this.articleData.like_type=1;
+
     this.articleService.likeArticle(this.id)
       .subscribe((data:any)=>{
-        if(data.success==1){
-          this.articleData.is_like=1;
-          this.articleData.total_likes+=2;
-        }
+       
       });
   }
 
   unLikeArticle(){
-    if(this.articleData.is_like==0){
+
+    if(this.articleData.like_type==0){
       return false;
     }
+
+    if(this.articleData.like_type==1){
+      this.articleData.total_likes-=2;
+    }
+
+    if(this.articleData.like_type==null){
+      this.articleData.total_likes-=1;
+    }
+
+    this.articleData.like_type=0;
+
     this.articleService.unLikeArticle(this.id)
     .subscribe((data:any)=>{
-      if(data.success==1){
-        this.articleData.is_like=0;
-        this.articleData.total_likes-=2;
-      }
+    
+    });
+  }
+
+  removeVote(){
+    
+    if(this.articleData.like_type==0){
+      this.articleData.total_likes+=1;
+    }
+
+    if(this.articleData.like_type==1){
+      this.articleData.total_likes-=1;
+    }
+
+    this.articleData.like_type=null;
+    this.articleService.removeVote(this.id)
+    .subscribe((data:any)=>{
+      //when we get the data
     });
   }
 

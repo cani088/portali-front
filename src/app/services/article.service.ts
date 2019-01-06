@@ -59,5 +59,11 @@ export class ArticleService {
     let url=this._url+"/comment/submit";
     return this.http.post(url,comment_data);
   }
+
+  removeVote(id){
+    let url=this._url+"/article/removeVote";
+    return this.http.post(url,{article_id:id});
+  }
+  
 }
    
