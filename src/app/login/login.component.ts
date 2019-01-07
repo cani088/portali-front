@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule, FormBuilder } from '@angular/forms';
+import { FormsModule,FormGroup, FormBuilder } from '@angular/forms';
+import { UserService } from '../services/user.service';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -11,8 +14,12 @@ import { FormsModule, FormBuilder } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   closeResult: string;
-  public myForm;
-  constructor(private modalService: NgbModal,public fb:FormBuilder) {}
+  public myForm:FormGroup;
+  public hasError=false;
+  public errorMessage='';
+  public success=false;
+  private _url='http://127.0.0.1:8000/api';
+  constructor(private userService:UserService, private modalService: NgbModal,public fb:FormBuilder,private router:Router) {}
 
   open(content) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
@@ -33,15 +40,46 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(){
-    this.myForm=this.fb.group({
-      username:"",
-      name:"",
-      last_name:"",
-      email:"",
-      password:"",
-      password_2:"",
-      birth_year:"" 
-    });
 
+    this.loginFrom();
+  }
+
+  loginFrom(){
+
+    this.myForm=this.fb.group({
+      user_email:"",
+      password:""
+    });
+  }
+
+  // setSession(){
+
+  //   this.localSto
+  // }
+
+  userLogin(){
+
+    var res= this.userService.login(this.myForm.value);
+    res.subscribe((data:any)=>{
+      localStorage.setItem('token',data.token);
+
+      if(data.success==1){
+        //when the user has been registered successfully
+        this.success=true;
+        this.hasError=false;
+        this.router.navigate(['/top'])
+        console.log('data',data);
+
+        console.log('dataToken',data.token);
+        
+      }else{
+        //when there has been an error
+        this.hasError=true;
+        this.errorMessage=data.message;
+      }
+      console.log('data',data);
+
+        console.log('dataToken',data.token);
+    })
   }
 }

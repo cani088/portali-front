@@ -18,6 +18,12 @@ export class RegisterComponent implements OnInit {
   constructor(private fb:FormBuilder,private userService:UserService,private router:Router) { }
 
   ngOnInit() {
+
+    this.regsiterFrom();
+  }
+
+  regsiterFrom(){
+
     this.myForm=this.fb.group({
       username:"",
       user_email:"",
@@ -37,11 +43,12 @@ export class RegisterComponent implements OnInit {
         this.success=true;
         this.hasError=false;
         this.router.navigate(['/top'])
+        localStorage.setItem('token',data.token);
       }else{
         //when there has been an error
         this.hasError=true;
         this.errorMessage=data.message;
       }
-    });  
+    });
   }
 }

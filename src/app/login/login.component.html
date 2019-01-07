@@ -17,14 +17,14 @@
             <form [formGroup]="myForm" >
               <div class="form-group">
                   <label for="username">Username</label>
-                  <input type="text" name="username" class='form-control' placeholder="Username">
+                  <input formControlName="user_email" type="text" name="username" class='form-control' placeholder="Username">
                   <label for="password"></label>
             
                   <label for="password">Password</label>
-                  <input type="password" name="password" class='form-control' placeholder="Password">
+                  <input formControlName="password" type="password" name="password" class='form-control' placeholder="Password">
               </div>
               <a routerLink="/register" data-dismiss="modal">Regjistrohu</a>
-              <button type="submit" class="btn btn-primary submit-btn">Login</button>
+              <button (click)="userLogin()" type="submit" class="btn btn-primary submit-btn">Login</button>
             
             </form>
           </div>
