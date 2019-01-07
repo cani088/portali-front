@@ -29,7 +29,7 @@
   </div>
   <div class="user_profile-top">
     <div *ngIf="isLoggedIn" class="user_data">
-      <span>Besnik Cani</span>
+      <span>{{token.user_name || token.user_email}}</span>
     </div>
     <div *ngIf="!isLoggedIn">
       <a data-toggle="modal" data-target="#exampleModalLong" routerActive='active' class='nav-item nav-link'>Login</a>

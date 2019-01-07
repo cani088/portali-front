@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-top-menu',
@@ -10,8 +10,13 @@ export class TopMenuComponent implements OnInit {
   public pageType;
   public isLoggedIn=false;
   public ama=false;
-  constructor() { 
-   
+  public token;
+  constructor(private userService:UserService) { 
+    var token=this.userService.decodeToken(localStorage.getItem('token'));
+    if(token){
+      this.token=token;
+      this.isLoggedIn=true;
+    }
   }
   ngOnInit() {
   }
