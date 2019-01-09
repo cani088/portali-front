@@ -193,6 +193,14 @@
 
 }
 
+@media (max-width:767px) { 
+
+    .article_image {
+
+        margin-right: 0px !important;
+    }
+}
+
 #sort{
     height:30px;
     background-color:#083862;

@@ -74,13 +74,15 @@
 }
 
 
+
+
 .activeTab{
     background-color:rgb(101, 233, 162);
     color:#083862 !important;
 }
 
 
-@media (max-width:884px) {
+@media (max-width:767px) {
 
     .navbar_besi {
         width:100%;
@@ -115,6 +117,47 @@
     .navbar-toggler{
         float: right;
     }
+
+    .navbar-nav .nav-item {
+
+        padding-top: 0px;
+        height: 40px;
+    }
+
+    .nav-item a {
+        text-align: left;
+    }
+    .user_data{
+
+        margin: 10px 0;
+    }
+
+    #search-top {
+
+        margin: 10px 0;
+    }
+
+    .navbar-brand img{
+
+        margin-left: -45px;
+    }
+    .navbar button {
+
+        margin-top: 9px
+    }
+
+    .searchDiv i{
+
+        color: #4a4a4a;
+        margin-left: -20px;
+    }
+
+    .userName {
+
+        margin-left: 5px;
+        font-size: 14px;
+    }
+
 
 }
 /* .navbar-besi{

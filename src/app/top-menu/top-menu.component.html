@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-lg navbar-light navbar_besi hidden_mobile mb-10">
+<nav class="navbar navbar-expand-md navbar-light navbar_besi hidden_mobile mb-10">
 
   <!-- <div style="display:flex; justify-content:space-between"> -->
   <div>
@@ -48,6 +48,9 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div *ngIf="isLoggedIn" class="user_data">
+          <i class="fas fa-user-circle"></i><span class="userName">Besnik Cani</span>
+      </div>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link nav-item-mobile" href="#">TOP LAJMET <span class="sr-only">(current)</span></a>
@@ -62,9 +65,10 @@
         <a class="nav-link nav-item-mobile" href="#">INTERESANTE</a>
       </li>
     </ul>
-    <div style="position: relative;">
+    <div class="searchDiv" style="position: relative;">
 
       <input type="text" name="" id="search-top" placeholder="Kërko ne portal">
+      <i class="fas fa-search"></i>
       <!-- <button class='btn btn-primary search-btn'>
           <img src="assets/images/search.svg" width="15px" height='auto' alt="">
       </button> -->
@@ -72,9 +76,6 @@
       <!-- <img src="assets/images/search.svg" width="15px" height="auto" class='search-btn'> -->
     </div>
     <div class="user_profile-top">
-      <div *ngIf="isLoggedIn" class="user_data">
-        <span>Besnik Cani</span>
-      </div>
       <div *ngIf="!isLoggedIn">
         <a data-toggle="modal" data-target="#exampleModalLong" routerActive='active' class='nav-item nav-item-mobile nav-link navLogin'>Login</a>
       </div>
