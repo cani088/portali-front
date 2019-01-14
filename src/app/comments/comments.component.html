@@ -1,13 +1,15 @@
-<div id='comments-container' class='col-md-8 col-sm-12 mt-5'> 
-  <h5>Shto nje koment te ri</h5>
-  <div id='form'>
-      <form [formGroup]="myForm" (ngSubmit)="submitComment(0)" >
-          <textarea name="comment" formControlName="comment" class='col-md-8 col-sm-12' id="write_comment_textarea" cols="100" rows="5" resizeable='false'></textarea>
-          <br>
-          <input type="submit"  value="Submit" [className]="canSubmit? 'disabled btn btn-primary':'btn btn-primary'" class='btn btn-primary'/>
-      </form>
-  </div>
-  <h3>Diskutimet ({{totalComments}}):</h3>
-  <span *ngIf='totalComments==0'>Nuk ka asnje koment</span>      
-
+<div class="row">
+    <div id='comments-container' class='col-md-8 col-sm-12 mt-5'> 
+        <h5>Shto nje koment te ri</h5>
+        <div id='form'>
+            <form [formGroup]="myForm" (ngSubmit)="submitComment(0)" >
+                <textarea name="comment" formControlName="comment" class='col-md-8 col-sm-12' id="write_comment_textarea" cols="100" rows="5" resizeable='false'></textarea>
+                <br>
+                <input type="submit"  value="Submit" [className]="canSubmit? 'disabled btn btn-primary':'btn btn-primary'" class='btn btn-primary'/>
+            </form>
+        </div>
+        <h3>Diskutimet ({{totalComments}}):</h3>
+        <span *ngIf='totalComments==0'>Nuk ka asnje koment</span>      
+    
+    </div>
 </div>

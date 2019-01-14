@@ -1,60 +1,62 @@
-<div class="row">
-    <div class="content-container col-md-8 col-sm-12">
-        <div class="article_content">
-            <h3 style='padding:10px;'>
-                {{articleData.title}}
-            </h3>
-            
-            <div *ngIf='hasImage' class="article_image">
-                <img src="{{articleData.article_image}}" alt="" width="100%" height="auto">
-                <span class='picture_info'>Info per fotografi</span>
-            </div>
-            <div class="article_body">
-                <div class="article_text mt-5" [innerHtml]="articleData.body"></div>
+<div class="container">
+    <div class="row">
+        <div class="content-container col-md-8 col-sm-12">
+            <div class="article_content">
+                <h3 style='padding:10px;'>
+                    {{articleData.title}}
+                </h3>
                 
-                <!-- Likes and dislikes -->
-                <div class="article_info_article_page">
-                    <img *ngIf='articleData.like_type==0 || articleData.like_type==null' (click)="likeArticle()" src="assets/images/like.svg" class='like_unlike like' height="20px" alt="">
-                    <img *ngIf='articleData.like_type==1' (click)="removeVote()" src="assets/images/like-full.svg" class='like_unlike like' height="20px" alt="">
+                <div *ngIf='hasImage' class="article_image">
+                    <img src="{{articleData.article_image}}" alt="" width="100%" height="auto">
+                    <span class='picture_info'>Info per fotografi</span>
+                </div>
+                <div class="article_body">
+                    <div class="article_text mt-5" [innerHtml]="articleData.body"></div>
                     
-                    <span class='total_likes'>{{articleData.total_likes}}</span>
-                    <img *ngIf='articleData.like_type==0' (click)="removeVote()" src="assets/images/dislike-full.svg" class='like_unlike unlike' height="20px" alt="">
-                    <img *ngIf='articleData.like_type==1 || articleData.like_type==null' (click)="unLikeArticle()" src="assets/images/dislike.svg" class='like_unlike unlike' height="20px" alt="">
-                    <!-- <img (click)="unLikeArticle()" src="assets/images/dislike.svg" class='like_unlike unlike' height="20px" alt=""> -->
-                    <span class='article_time_article_page'>{{articleData.human_readable}}</span>
+                    <!-- Likes and dislikes -->
+                    <div class="article_info_article_page">
+                        <img *ngIf='articleData.like_type==0 || articleData.like_type==null' (click)="likeArticle()" src="assets/images/like.svg" class='like_unlike like' height="20px" alt="">
+                        <img *ngIf='articleData.like_type==1' (click)="removeVote()" src="assets/images/like-full.svg" class='like_unlike like' height="20px" alt="">
+                        
+                        <span class='total_likes'>{{articleData.total_likes}}</span>
+                        <img *ngIf='articleData.like_type==0' (click)="removeVote()" src="assets/images/dislike-full.svg" class='like_unlike unlike' height="20px" alt="">
+                        <img *ngIf='articleData.like_type==1 || articleData.like_type==null' (click)="unLikeArticle()" src="assets/images/dislike.svg" class='like_unlike unlike' height="20px" alt="">
+                        <!-- <img (click)="unLikeArticle()" src="assets/images/dislike.svg" class='like_unlike unlike' height="20px" alt=""> -->
+                        <span class='article_time_article_page'>{{articleData.human_readable}}</span>
+                    </div>
+                    <!-- If the article has tags display the tags div -->
+                    
+                    <div *ngIf='hasTags' class="tags">
+                        <span ><b> Shiko me shume lajme rreth: </b></span><br>
+                        <a *ngFor="let tag of articleData.tags" href="index.html?tag={{tag.tag_body}}">
+                            <div class="tag">{{tag.tag_body}}</div>
+                        </a>
+                    </div>
+                    <!-- End the tags div -->
                 </div>
-                <!-- If the article has tags display the tags div -->
+            </div>
+        </div>
+        <div class="col-md-3 mt-5 col-sm-10">
+            <!-- asdasdasda -->
+            <div class="similar mb-4">
+                <h5>Artikuj te ngjajshem</h5>
+                <ul class='list-group'>
+                    <a href="#"><li class='side-list-item'>Tahirsylaj tregon se kur priten reshje intensive të borës në Kosovë</li></a> 
+                    <a href="#"><li class='side-list-item'> Surprizë! Këtë tip femrash meshkujt shpesh e tradhtojnë</li></a> 
+                    <a href="#"><li class='side-list-item'>Notat e lojtarëve: Arsenal 4-2 Tottenham, Aubameyang lojtar i ndeshjes – vlerësohen lartë Xhaka dhe Mustafi</li></a> 
+                </ul>
+            </div>
+            
+            <div class="recomended">
+                <h5>Artikuj te rekomanduar</h5>
+                <ul class='list-group'>
+                    <a href="#"><li class='side-list-item border-orange'>Derbi londinez i takon Arsenalit, Topçinjtë fitojnë ndaj Tottenhamit në një përballje mbresëlënëse </li></a> 
+                    <a href="#"><li class='side-list-item border-orange'>Aksioni i inspektorëve kundër shfrytëzimit ilegal të zhavorit (Video) </li></a> 
+                    <a href="#"><li class='side-list-item border-orange'>Titull i shkurter </li></a> 
                 
-                <div *ngIf='hasTags' class="tags">
-                    <span ><b> Shiko me shume lajme rreth: </b></span><br>
-                    <a *ngFor="let tag of articleData.tags" href="index.html?tag={{tag.tag_body}}">
-                        <div class="tag">{{tag.tag_body}}</div>
-                    </a>
-                </div>
-                <!-- End the tags div -->
+                </ul>
             </div>
         </div>
     </div>
-    <div class="col-md-3 mt-5 col-sm-10">
-        <!-- asdasdasda -->
-        <div class="similar mb-4">
-            <h5>Artikuj te ngjajshem</h5>
-            <ul class='list-group'>
-                <a href="#"><li class='side-list-item'>Tahirsylaj tregon se kur priten reshje intensive të borës në Kosovë</li></a> 
-                <a href="#"><li class='side-list-item'> Surprizë! Këtë tip femrash meshkujt shpesh e tradhtojnë</li></a> 
-                <a href="#"><li class='side-list-item'>Notat e lojtarëve: Arsenal 4-2 Tottenham, Aubameyang lojtar i ndeshjes – vlerësohen lartë Xhaka dhe Mustafi</li></a> 
-            </ul>
-        </div>
-        
-        <div class="recomended">
-            <h5>Artikuj te rekomanduar</h5>
-            <ul class='list-group'>
-                <a href="#"><li class='side-list-item border-orange'>Derbi londinez i takon Arsenalit, Topçinjtë fitojnë ndaj Tottenhamit në një përballje mbresëlënëse </li></a> 
-                <a href="#"><li class='side-list-item border-orange'>Aksioni i inspektorëve kundër shfrytëzimit ilegal të zhavorit (Video) </li></a> 
-                <a href="#"><li class='side-list-item border-orange'>Titull i shkurter </li></a> 
-            
-            </ul>
-        </div>
-    </div>
+    <app-comments></app-comments>
 </div>
-<app-comments></app-comments>
